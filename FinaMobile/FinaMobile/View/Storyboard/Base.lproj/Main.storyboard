@@ -12,7 +12,7 @@
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FinaMobile" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,13 +103,13 @@
         <!--Cards-->
         <scene sceneID="Cvt-R1-S3p">
             <objects>
-                <viewController id="Vs8-61-T6K" customClass="ViewController" customModule="FinaMobile" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Vs8-61-T6K" customClass="CardsViewController" customModule="FinaMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9cy-zY-Wg7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="d8h-pU-BCT">
-                                <rect key="frame" x="20" y="312" width="335" height="286"/>
+                                <rect key="frame" x="20" y="348.5" width="335" height="249.5"/>
                                 <color key="backgroundColor" name="Background"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TransactionCell" id="iRK-Ov-0fv">
@@ -124,13 +124,13 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent transactions:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9Y-Yu-6BA">
-                                <rect key="frame" x="20" y="271.5" width="335" height="20.5"/>
+                                <rect key="frame" x="20" y="308" width="335" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" name="Label"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5GG-x0-jPG">
-                                <rect key="frame" x="20" y="217.5" width="335" height="34"/>
+                                <rect key="frame" x="20" y="254" width="335" height="34"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X43-u5-ivd">
                                         <rect key="frame" x="0.0" y="0.0" width="105" height="34"/>
@@ -155,9 +155,12 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="H3g-ZK-F59">
-                                <rect key="frame" x="20" y="64" width="335" height="133.5"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="H3g-ZK-F59">
+                                <rect key="frame" x="20" y="64" width="335" height="170"/>
                                 <color key="backgroundColor" name="Background"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="Jum-73-svh"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OLU-CZ-YMG">
                                     <size key="itemSize" width="330" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -182,7 +185,6 @@
                             <constraint firstItem="5GG-x0-jPG" firstAttribute="leading" secondItem="jvh-yb-AiF" secondAttribute="leading" constant="20" id="ewb-sr-kwo"/>
                             <constraint firstItem="H3g-ZK-F59" firstAttribute="top" secondItem="jvh-yb-AiF" secondAttribute="top" constant="20" id="jnX-zZ-FvR"/>
                             <constraint firstItem="jvh-yb-AiF" firstAttribute="trailing" secondItem="H3g-ZK-F59" secondAttribute="trailing" constant="20" id="lAx-VD-WJv"/>
-                            <constraint firstItem="H3g-ZK-F59" firstAttribute="height" secondItem="9cy-zY-Wg7" secondAttribute="height" multiplier="0.2" id="lT7-kk-DZP"/>
                             <constraint firstItem="f9Y-Yu-6BA" firstAttribute="centerX" secondItem="9cy-zY-Wg7" secondAttribute="centerX" id="zoB-GO-IDV"/>
                         </constraints>
                     </view>
@@ -191,6 +193,9 @@
                             <color key="tintColor" name="Label"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="cardsCollectionView" destination="H3g-ZK-F59" id="nLg-Li-Ice"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xX8-FR-Tve" sceneMemberID="firstResponder"/>
             </objects>

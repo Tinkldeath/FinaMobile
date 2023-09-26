@@ -11,7 +11,10 @@ class CardCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    }
+    
+    func setup(_ title: String, _ color: UIColor, _ balance: String, _ currency: String, _ owner: String, _ expiresDate: String, _ number: String) {
+        
     }
 
 }
