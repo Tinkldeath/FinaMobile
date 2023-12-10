@@ -17,6 +17,10 @@ struct User: Codable {
     var cards: [String]
     var credits: [String]
     var receipts: [String]
+    
+    static func create(_ uid: String, _ name: String, _ passportIdentifier: Data, _ codePassword: Data) -> User {
+        return User(uid: uid, name: name, passportIdentifier: passportIdentifier, codePassword: codePassword, accounts: [], cards: [], credits: [], receipts: [])
+    }
 }
 
 

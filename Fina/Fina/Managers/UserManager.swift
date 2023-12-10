@@ -1,0 +1,60 @@
+//
+//  UserManager.swift
+//  Fina
+//
+//  Created by Dima on 10.12.23.
+//
+
+import Foundation
+import RxRelay
+import FirebaseFirestore
+
+typealias UserCompletionHandler = (User?) -> Void
+
+final class UserManager {
+    
+    let currentUser = BehaviorRelay<User?>(value: nil)
+    
+    private let firestore = Firestore.firestore()
+    
+    private var listeners = [ListenerRegistration]()
+    
+    func getUser(uid: String, _ completion: @escaping UserCompletionHandler) {
+        firestore.collection(User.collection()).document(uid).getDocument { snapshot, error in
+            guard let data = snapshot?.data(), error == nil, let user = User(data) else { completion(nil); return }
+            completion(user)
+        }
+    }
+    
+    func getCurrentUser(_ uid: String) {
+        observeCurrentUserChanges(uid)
+    }
+    
+    func createUser(_ newUser: User, _ completion: @escaping BoolClosure) {
+        firestore.collection(User.collection()).getDocuments { [weak self] snapshot, error in
+            guard let snapshot = snapshot, error == nil else { completion(false); return }
+            guard snapshot.documents.compactMap({ User($0.data()) }).first(where: { Ciper.unseal($0.passportIdentifier) == Ciper.unseal(newUser.passportIdentifier) }) == nil else {
+                completion(false);
+                return
+            }
+            self?.firestore.collection(User.collection()).document(newUser.uid).setData(newUser.toEntity()) { error in
+                completion(error == nil)
+                self?.observeCurrentUserChanges(newUser.uid)
+            }
+        }
+    }
+    
+    func signOut() {
+        listeners.forEach{ $0.remove() }
+        currentUser.accept(nil)
+    }
+    
+    private func observeCurrentUserChanges(_ uid: String) {
+        let reference = firestore.collection(User.collection()).document(uid).addSnapshotListener { [weak self] snapshot, error in
+            guard let data = snapshot?.data(), let user = User(data), error == nil else { return }
+            self?.currentUser.accept(user)
+        }
+        listeners.append(reference)
+    }
+    
+}

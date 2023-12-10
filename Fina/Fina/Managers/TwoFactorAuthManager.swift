@@ -20,6 +20,10 @@ final class TwoFactorAuthManager {
         return context.biometricType != .none
     }
     
+    var enabledBiometricType: LAContext.BiometricType {
+        return context.biometricType
+    }
+    
     func isBiometricFastVerificationEnabled(for userId: String) -> Bool {
         return keychain.bool(forKey: userId) ?? false
     }
@@ -32,10 +36,16 @@ final class TwoFactorAuthManager {
         keychain.removeAllKeys()
     }
     
-    func requestBiometric(for userId: String, _ completion: @escaping BoolClosure) {
+    func authorizeBiometric(for userId: String, _ completion: @escaping BoolClosure) {
+        guard isBiometricEnabled, isBiometricFastVerificationEnabled(for: userId) else { completion(false); return }
         context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "\(context.biometricType.rawValue) for code-password") { [weak self] granted, error in
             completion(granted && error == nil)
             self?.context = LAContext()
         }
+    }
+    
+    func authorizeWithCodePassword(required codePassword: Data, entered password: String, _ completion: @escaping BoolClosure) {
+        let unsealed = Ciper.unseal(codePassword)
+        completion(unsealed == password)
     }
 }
