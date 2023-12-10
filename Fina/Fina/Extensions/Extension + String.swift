@@ -44,6 +44,12 @@ extension String {
         return passwordPredicate.evaluate(with: self)
     }
     
+    func isFourDigitPassword() -> Bool {
+        let passwordRegex = "^[0-9]{4}$"
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", passwordRegex)
+        return passwordTest.evaluate(with: self)
+    }
+    
     static func generateUniqueCardNumber() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyMMddHHmmss"

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import RxSwift
 
 class BaseViewController: UIViewController {
     
@@ -16,6 +16,8 @@ class BaseViewController: UIViewController {
     }()
     
     private let activityIndicatorView = UIActivityIndicatorView(style: .medium)
+    
+    let disposeBag = DisposeBag()
     
     var coordinator: AppCoordinator?
     
