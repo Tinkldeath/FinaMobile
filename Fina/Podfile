@@ -1,0 +1,13 @@
+platform :ios, '15.0'
+
+target 'Fina' do
+  use_frameworks!
+  
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'Charts'
+  pod 'FirebaseAuth'
+  pod 'FirebaseFirestore'
+  pod 'FirebaseStorage'
+  pod 'SwiftKeychainWrapper'
+end

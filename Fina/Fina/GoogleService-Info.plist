@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyApCmVhgW8miv3vR8CHTVeXiXcuo0d4pcY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>265151537512</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.tinkldeath.FinaMobile</string>
+	<key>PROJECT_ID</key>
+	<string>finamoblie</string>
+	<key>STORAGE_BUCKET</key>
+	<string>finamoblie.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:265151537512:ios:52a17b25b218e1ffa976dd</string>
+</dict>
+</plist>
