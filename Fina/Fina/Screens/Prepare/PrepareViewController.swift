@@ -13,9 +13,10 @@ class PrepareViewController: BaseViewController {
         super.viewDidAppear(animated)
         
         Task {
-            try? await Task.sleep(nanoseconds: 10_000_000_000)
-            self.coordinator?.coordinateMain()
+            await ManagerFactory.shared.initialize()
+            await MainActor.run(body: { [weak self] in
+                self?.coordinator?.coordinateMain()
+            })
         }
     }
-
 }

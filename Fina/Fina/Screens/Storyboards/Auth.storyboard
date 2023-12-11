@@ -72,7 +72,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="lXo-Qn-VxF" firstAttribute="centerX" secondItem="z1B-tF-Ft0" secondAttribute="centerX" id="7Q8-Rd-Eyt"/>
                                     <constraint firstItem="TQh-J1-mwB" firstAttribute="leading" secondItem="z1B-tF-Ft0" secondAttribute="leading" id="8XA-DD-XYF"/>
@@ -88,7 +88,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="z1B-tF-Ft0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="48" id="2gp-11-7Az"/>
                             <constraint firstItem="z1B-tF-Ft0" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ZQz-Vx-YND"/>
@@ -189,7 +189,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="cVv-Jg-Ra1" firstAttribute="top" secondItem="e8G-r3-Pey" secondAttribute="bottom" constant="16" id="1ag-5J-JWI"/>
                                     <constraint firstItem="Ldz-MP-X4p" firstAttribute="leading" secondItem="337-un-GcU" secondAttribute="leading" id="BPI-jz-EjD"/>
@@ -205,7 +205,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gky-PX-iid"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="337-un-GcU" firstAttribute="centerY" secondItem="7OY-jR-Ew0" secondAttribute="centerY" id="041-8r-uE2"/>
                             <constraint firstItem="337-un-GcU" firstAttribute="leading" secondItem="gky-PX-iid" secondAttribute="leading" constant="48" id="VFV-7r-vKI"/>
@@ -272,7 +272,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="pyV-7q-zKh" firstAttribute="top" secondItem="EfA-yE-NM6" secondAttribute="top" id="6hd-Cu-F6o"/>
                                     <constraint firstAttribute="bottom" secondItem="Aro-nC-Kim" secondAttribute="bottom" id="HdG-Ze-6SP"/>
@@ -285,7 +285,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9OS-Pe-Rbb"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="9OS-Pe-Rbb" firstAttribute="bottom" secondItem="4me-5d-o0R" secondAttribute="bottom" constant="16" id="Cpz-sI-92f"/>
                             <constraint firstItem="9OS-Pe-Rbb" firstAttribute="trailing" secondItem="4me-5d-o0R" secondAttribute="trailing" constant="16" id="J2b-3K-8AV"/>
@@ -324,7 +324,7 @@
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ofQ-Ex-nfr"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Jhq-8b-ZJT" firstAttribute="centerX" secondItem="16r-gJ-QBZ" secondAttribute="centerX" id="5yQ-Qu-RqG"/>
                             <constraint firstItem="PpI-K8-yvZ" firstAttribute="centerY" secondItem="16r-gJ-QBZ" secondAttribute="centerY" id="8lM-kq-0zA"/>
@@ -341,8 +341,8 @@
     </scenes>
     <resources>
         <image name="touchid" catalog="system" width="128" height="122"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

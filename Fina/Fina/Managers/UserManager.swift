@@ -8,16 +8,24 @@
 import Foundation
 import RxRelay
 import FirebaseFirestore
+import FirebaseAuth
 
 typealias UserCompletionHandler = (User?) -> Void
 
-final class UserManager {
+final class UserManager: BaseManager {
     
     let currentUser = BehaviorRelay<User?>(value: nil)
     
     private let firestore = Firestore.firestore()
     
+    private let auth = Auth.auth()
+    
     private var listeners = [ListenerRegistration]()
+    
+    func initialize() async {
+        guard let uid = auth.currentUser?.uid, let user = await fetchUserAsync(uid) else { return }
+        currentUser.accept(user)
+    }
     
     func getUser(uid: String, _ completion: @escaping UserCompletionHandler) {
         firestore.collection(User.collection()).document(uid).getDocument { snapshot, error in
@@ -49,6 +57,10 @@ final class UserManager {
         currentUser.accept(nil)
     }
     
+}
+
+private extension UserManager {
+    
     private func observeCurrentUserChanges(_ uid: String) {
         let reference = firestore.collection(User.collection()).document(uid).addSnapshotListener { [weak self] snapshot, error in
             guard let data = snapshot?.data(), let user = User(data), error == nil else { return }
@@ -57,4 +69,9 @@ final class UserManager {
         listeners.append(reference)
     }
     
+    private func fetchUserAsync(_ uid: String) async -> User? {
+        guard let user = try? await firestore.collection(User.collection()).document(uid).getDocument() else { return nil }
+        guard let data = user.data(), let user = User(data) else { return nil }
+        return user
+    }
 }

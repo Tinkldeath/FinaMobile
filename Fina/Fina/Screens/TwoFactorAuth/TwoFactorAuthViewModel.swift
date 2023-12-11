@@ -17,6 +17,7 @@ final class TwoFactorAuthViewModel: BaseLoadingViewModel {
     let biometricType = BehaviorRelay<LAContext.BiometricType>(value: .none)
     let logoutEvent = PublishRelay<Void>()
     let enableBiometricEvent = PublishRelay<Void>()
+    let fastBiometricEvent = PublishRelay<Void>()
     
     private let userManager = ManagerFactory.shared.userManager
     private let twoFactorAuthManager = ManagerFactory.shared.twoFactorAuthManager
@@ -27,6 +28,14 @@ final class TwoFactorAuthViewModel: BaseLoadingViewModel {
         super.init()
         
         biometricType.accept(twoFactorAuthManager.enabledBiometricType)
+    }
+    
+    func fastBiometric() {
+        guard twoFactorAuthManager.isBiometricEnabled, let uid = authManager.currentUser.value, twoFactorAuthManager.isBiometricFastVerificationEnabled(for: uid) else { return }
+        twoFactorAuthManager.authorizeBiometric(for: uid) { authorized in
+            guard authorized else { return }
+            self.prepareEvent.accept(())
+        }
     }
     
     func enterInput(_ input: String) {

@@ -56,7 +56,7 @@ final class DefaultAppCoordinator: AppCoordinator {
     }
     
     func coordinateMain() {
-        guard let vc: UIViewController = UIStoryboard.instantiateViewController(identifier: "MainViewController", storyboard: .main) else { return }
+        guard let vc: UITabBarController = UIStoryboard.instantiateViewController(identifier: "MainViewController", storyboard: .main) else { return }
         navigationController.pushViewController(vc, animated: true)
     }
     

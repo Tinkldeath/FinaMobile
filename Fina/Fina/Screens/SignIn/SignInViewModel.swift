@@ -9,6 +9,7 @@ import Foundation
 import RxRelay
 
 final class SignInViewModel: BaseLoadingViewModel {
+    
     let isValidInput = BehaviorRelay<Bool>(value: false)
     let twoFactorRelay = PublishRelay<Void>()
     

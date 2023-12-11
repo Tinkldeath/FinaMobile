@@ -21,6 +21,10 @@ final class AuthManager {
         return !(auth.currentUser?.isAnonymous ?? true)
     }
     
+    var currentUserEmail: String? {
+        return auth.currentUser?.email
+    }
+    
     init() {
         guard let _ = auth.currentUser?.uid else { auth.signInAnonymously(); return }
         currentUser.accept(auth.currentUser?.uid)

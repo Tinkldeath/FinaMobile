@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3217A6D02B261FF900379E07 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3217A6CF2B261FF900379E07 /* CardsViewController.swift */; };
 		3238B4F02B253703001EC3D8 /* Ciper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3238B4EF2B253703001EC3D8 /* Ciper.swift */; };
 		3238B4F22B25392B001EC3D8 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3238B4F12B25392B001EC3D8 /* UserManager.swift */; };
 		3238B4F42B253BC7001EC3D8 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3238B4F32B253BC7001EC3D8 /* SignInViewModel.swift */; };
@@ -17,6 +18,20 @@
 		3238B5002B2548FF001EC3D8 /* TwoFactorAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3238B4FF2B2548FF001EC3D8 /* TwoFactorAuthViewModel.swift */; };
 		3238B5032B254CCC001EC3D8 /* PrepareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3238B5022B254CCC001EC3D8 /* PrepareViewController.swift */; };
 		3267FEE42B2532BF00B9E4B0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267FEE32B2532BF00B9E4B0 /* Constants.swift */; };
+		32C90DCB2B267D380025C5B4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DCA2B267D380025C5B4 /* ProfileViewController.swift */; };
+		32C90DCD2B267D590025C5B4 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DCC2B267D590025C5B4 /* ProfileViewModel.swift */; };
+		32C90DD12B2680590025C5B4 /* ProfileAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DD02B2680590025C5B4 /* ProfileAction.swift */; };
+		32C90DD32B2688F00025C5B4 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DD22B2688F00025C5B4 /* Currency.swift */; };
+		32C90DD62B2689FB0025C5B4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DD52B2689FB0025C5B4 /* HomeViewController.swift */; };
+		32C90DD82B268A580025C5B4 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DD72B268A580025C5B4 /* HomeViewModel.swift */; };
+		32C90DDA2B2698170025C5B4 /* CardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DD92B2698170025C5B4 /* CardsViewModel.swift */; };
+		32C90DDC2B2698750025C5B4 /* CardsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DDB2B2698750025C5B4 /* CardsManager.swift */; };
+		32C90DDE2B2698840025C5B4 /* BankAccountsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DDD2B2698840025C5B4 /* BankAccountsManager.swift */; };
+		32C90DE02B26991B0025C5B4 /* BankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DDF2B26991B0025C5B4 /* BankAccount.swift */; };
+		32C90DE22B269CFA0025C5B4 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DE12B269CFA0025C5B4 /* Card.swift */; };
+		32C90DE52B26B0090025C5B4 /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DE42B26B0090025C5B4 /* AddCardViewController.swift */; };
+		32C90DE72B26B0C40025C5B4 /* AddCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DE62B26B0C40025C5B4 /* AddCardViewModel.swift */; };
+		32C90DE92B26BF4C0025C5B4 /* Extension + Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DE82B26BF4C0025C5B4 /* Extension + Date.swift */; };
 		32E727AD2B2528990074DAB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E727AC2B2528990074DAB4 /* AppDelegate.swift */; };
 		32E727AF2B2528990074DAB4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E727AE2B2528990074DAB4 /* SceneDelegate.swift */; };
 		32E727B42B2528990074DAB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E727B22B2528990074DAB4 /* Main.storyboard */; };
@@ -44,6 +59,7 @@
 
 /* Begin PBXFileReference section */
 		0E2BE9FB88ADA484D64D97A4 /* Pods-Fina.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fina.release.xcconfig"; path = "Target Support Files/Pods-Fina/Pods-Fina.release.xcconfig"; sourceTree = "<group>"; };
+		3217A6CF2B261FF900379E07 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 		3238B4EF2B253703001EC3D8 /* Ciper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ciper.swift; sourceTree = "<group>"; };
 		3238B4F12B25392B001EC3D8 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		3238B4F32B253BC7001EC3D8 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
@@ -54,6 +70,20 @@
 		3238B4FF2B2548FF001EC3D8 /* TwoFactorAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoFactorAuthViewModel.swift; sourceTree = "<group>"; };
 		3238B5022B254CCC001EC3D8 /* PrepareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareViewController.swift; sourceTree = "<group>"; };
 		3267FEE32B2532BF00B9E4B0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		32C90DCA2B267D380025C5B4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		32C90DCC2B267D590025C5B4 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		32C90DD02B2680590025C5B4 /* ProfileAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAction.swift; sourceTree = "<group>"; };
+		32C90DD22B2688F00025C5B4 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		32C90DD52B2689FB0025C5B4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		32C90DD72B268A580025C5B4 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		32C90DD92B2698170025C5B4 /* CardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewModel.swift; sourceTree = "<group>"; };
+		32C90DDB2B2698750025C5B4 /* CardsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsManager.swift; sourceTree = "<group>"; };
+		32C90DDD2B2698840025C5B4 /* BankAccountsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountsManager.swift; sourceTree = "<group>"; };
+		32C90DDF2B26991B0025C5B4 /* BankAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccount.swift; sourceTree = "<group>"; };
+		32C90DE12B269CFA0025C5B4 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		32C90DE42B26B0090025C5B4 /* AddCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
+		32C90DE62B26B0C40025C5B4 /* AddCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewModel.swift; sourceTree = "<group>"; };
+		32C90DE82B26BF4C0025C5B4 /* Extension + Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Date.swift"; sourceTree = "<group>"; };
 		32E727A92B2528990074DAB4 /* Fina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32E727AC2B2528990074DAB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32E727AE2B2528990074DAB4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +141,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		3217A6CE2B261FE500379E07 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				3217A6CF2B261FF900379E07 /* CardsViewController.swift */,
+				32C90DD92B2698170025C5B4 /* CardsViewModel.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
 		3238B4F52B253C92001EC3D8 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +174,34 @@
 				3238B5022B254CCC001EC3D8 /* PrepareViewController.swift */,
 			);
 			path = Prepare;
+			sourceTree = "<group>";
+		};
+		32C90DC92B267D210025C5B4 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				32C90DCA2B267D380025C5B4 /* ProfileViewController.swift */,
+				32C90DCC2B267D590025C5B4 /* ProfileViewModel.swift */,
+				32C90DD02B2680590025C5B4 /* ProfileAction.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		32C90DD42B2689E20025C5B4 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				32C90DD52B2689FB0025C5B4 /* HomeViewController.swift */,
+				32C90DD72B268A580025C5B4 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		32C90DE32B26AFFA0025C5B4 /* AddCard */ = {
+			isa = PBXGroup;
+			children = (
+				32C90DE42B26B0090025C5B4 /* AddCardViewController.swift */,
+				32C90DE62B26B0C40025C5B4 /* AddCardViewModel.swift */,
+			);
+			path = AddCard;
 			sourceTree = "<group>";
 		};
 		32E727A02B2528990074DAB4 = {
@@ -176,6 +243,10 @@
 		32E727C02B2528A20074DAB4 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				32C90DE32B26AFFA0025C5B4 /* AddCard */,
+				32C90DD42B2689E20025C5B4 /* Home */,
+				32C90DC92B267D210025C5B4 /* Profile */,
+				3217A6CE2B261FE500379E07 /* Cards */,
 				3238B5012B254CB9001EC3D8 /* Prepare */,
 				3238B4FC2B2548D7001EC3D8 /* TwoFactorAuth */,
 				3238B4F52B253C92001EC3D8 /* SignUp */,
@@ -212,6 +283,7 @@
 				32E727CA2B2529A80074DAB4 /* Extension + String.swift */,
 				32E727CB2B2529A80074DAB4 /* Extension + UIStoryboard.swift */,
 				32E727CC2B2529A80074DAB4 /* Extension + UIView.swift */,
+				32C90DE82B26BF4C0025C5B4 /* Extension + Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -252,6 +324,8 @@
 				32EFE7552B252EDD00D5103D /* AuthManager.swift */,
 				32EFE75C2B2530A800D5103D /* TwoFactorAuthManager.swift */,
 				3238B4F12B25392B001EC3D8 /* UserManager.swift */,
+				32C90DDB2B2698750025C5B4 /* CardsManager.swift */,
+				32C90DDD2B2698840025C5B4 /* BankAccountsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -261,6 +335,9 @@
 			children = (
 				32EFE7582B252F8E00D5103D /* User.swift */,
 				32EFE75A2B252FBB00D5103D /* FirebaseEntity.swift */,
+				32C90DD22B2688F00025C5B4 /* Currency.swift */,
+				32C90DDF2B26991B0025C5B4 /* BankAccount.swift */,
+				32C90DE12B269CFA0025C5B4 /* Card.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -386,26 +463,41 @@
 				32E727D02B2529A80074DAB4 /* Extension + UIStoryboard.swift in Sources */,
 				3238B4FB2B253DA8001EC3D8 /* BaseLoadingViewModel.swift in Sources */,
 				32EFE7562B252EDD00D5103D /* AuthManager.swift in Sources */,
+				32C90DE22B269CFA0025C5B4 /* Card.swift in Sources */,
 				32E727C42B25290C0074DAB4 /* AppCoordinator.swift in Sources */,
 				32E727AD2B2528990074DAB4 /* AppDelegate.swift in Sources */,
 				32E727CF2B2529A80074DAB4 /* Extension + String.swift in Sources */,
 				32E727D12B2529A80074DAB4 /* Extension + UIView.swift in Sources */,
+				3217A6D02B261FF900379E07 /* CardsViewController.swift in Sources */,
 				32E727E12B252CAA0074DAB4 /* BaseViewController.swift in Sources */,
 				32E727D62B252C930074DAB4 /* SignInViewController.swift in Sources */,
 				3238B4F42B253BC7001EC3D8 /* SignInViewModel.swift in Sources */,
 				3238B4FE2B2548EA001EC3D8 /* TwoFactorAuthViewController.swift in Sources */,
+				32C90DCB2B267D380025C5B4 /* ProfileViewController.swift in Sources */,
 				32EFE7592B252F8E00D5103D /* User.swift in Sources */,
+				32C90DE02B26991B0025C5B4 /* BankAccount.swift in Sources */,
+				32C90DE72B26B0C40025C5B4 /* AddCardViewModel.swift in Sources */,
 				32E727DF2B252CAA0074DAB4 /* BaseManager.swift in Sources */,
 				32EFE75D2B2530A800D5103D /* TwoFactorAuthManager.swift in Sources */,
+				32C90DD82B268A580025C5B4 /* HomeViewModel.swift in Sources */,
+				32C90DE92B26BF4C0025C5B4 /* Extension + Date.swift in Sources */,
 				3238B4F92B253CAD001EC3D8 /* SignUpViewModel.swift in Sources */,
 				32E727CE2B2529A80074DAB4 /* Extension + Collection.swift in Sources */,
 				32EFE7542B252EB700D5103D /* ManagerFactory.swift in Sources */,
+				32C90DDC2B2698750025C5B4 /* CardsManager.swift in Sources */,
+				32C90DE52B26B0090025C5B4 /* AddCardViewController.swift in Sources */,
+				32C90DD32B2688F00025C5B4 /* Currency.swift in Sources */,
+				32C90DDA2B2698170025C5B4 /* CardsViewModel.swift in Sources */,
 				3238B5002B2548FF001EC3D8 /* TwoFactorAuthViewModel.swift in Sources */,
 				32E727AF2B2528990074DAB4 /* SceneDelegate.swift in Sources */,
 				32EFE75B2B252FBB00D5103D /* FirebaseEntity.swift in Sources */,
+				32C90DD12B2680590025C5B4 /* ProfileAction.swift in Sources */,
+				32C90DDE2B2698840025C5B4 /* BankAccountsManager.swift in Sources */,
 				3238B5032B254CCC001EC3D8 /* PrepareViewController.swift in Sources */,
+				32C90DCD2B267D590025C5B4 /* ProfileViewModel.swift in Sources */,
 				32E727DE2B252CAA0074DAB4 /* BaseLoadingView.swift in Sources */,
 				32E727CD2B2529A80074DAB4 /* Extension + LocalAuthentication.swift in Sources */,
+				32C90DD62B2689FB0025C5B4 /* HomeViewController.swift in Sources */,
 				3238B4F02B253703001EC3D8 /* Ciper.swift in Sources */,
 				3238B4F22B25392B001EC3D8 /* UserManager.swift in Sources */,
 				3267FEE42B2532BF00B9E4B0 /* Constants.swift in Sources */,
