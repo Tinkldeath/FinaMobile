@@ -50,6 +50,12 @@ extension String {
         return passwordTest.evaluate(with: self)
     }
     
+    func isValidCvv() -> Bool {
+        let cvvRegex = "^[0-9]{3}$"
+        let cvvTest = NSPredicate(format: "SELF MATCHES %@", cvvRegex)
+        return cvvTest.evaluate(with: self)
+    }
+    
     static func generateUniqueCardNumber() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyMMddHHmmss"
@@ -59,6 +65,29 @@ extension String {
         
         let cardNumber = timestamp + randomNumber
         return cardNumber
+    }
+    
+    static func generateRandomNumbers(_ count: Int) -> String {
+        var result = ""
+        for _ in 0..<count {
+            result += "\(Int.random(in: 0...9))"
+        }
+        return result
+    }
+    
+    static func generateIBAN(for accountNumber: String) -> String {
+        let countryCode = "BY"
+        let checkDigits = "42"
+        let bankCode = "4242"
+        return "\(countryCode)\(checkDigits)\(bankCode)\(accountNumber)"
+    }
+
+    static func generateContractNumber() -> String {
+        return String.generateRandomNumbers(13)
+    }
+
+    static func generateAccountNumber() -> String {
+        return String.generateRandomNumbers(26)
     }
     
 }

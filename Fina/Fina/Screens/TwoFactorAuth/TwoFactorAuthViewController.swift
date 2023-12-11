@@ -25,6 +25,12 @@ class TwoFactorAuthViewController: BaseInputViewController {
         viewModel = TwoFactorAuthViewModel()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        viewModel?.fastBiometric()
+    }
+    
     override func bind() {
         super.bind()
         

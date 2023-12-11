@@ -10,6 +10,7 @@ import RxRelay
 
 
 final class SignUpViewModel: BaseLoadingViewModel {
+    
     let isValidInput = BehaviorRelay<Bool>(value: false)
     let enableBiometricEvent = PublishRelay<Void>()
     let prepareEvent = PublishRelay<Void>()
@@ -18,7 +19,7 @@ final class SignUpViewModel: BaseLoadingViewModel {
     private let userManager = ManagerFactory.shared.userManager
     private let twoAuthFactorManager = ManagerFactory.shared.twoFactorAuthManager
     private var input: Input?
-    
+
     func enterInput(_ input: Input) {
         self.input = input
         isValidInput.accept(input.isValid())
