@@ -17,7 +17,6 @@ final class CardsManager: BaseManager {
     let userCards = BehaviorRelay<[Card]>(value: [])
     
     private let firestore = Firestore.firestore()
-    private var listeners = [ListenerRegistration]()
     private let auth = Auth.auth()
     
     func initialize() async {
@@ -66,12 +65,10 @@ private extension CardsManager {
     }
     
     private func observeUserCards(_ uid: String) {
-        let listener = firestore.collection(Card.collection()).whereField("ownerId", isEqualTo: uid).addSnapshotListener { [weak self] snapshot, error in
+        firestore.collection(Card.collection()).whereField("ownerId", isEqualTo: uid).addSnapshotListener { [weak self] snapshot, error in
             guard let documents = snapshot?.documents, error == nil else { return }
             let cards = documents.compactMap({ Card($0.data()) })
-            print("Observer event", cards)
             self?.userCards.accept(cards)
         }
-        listeners.append(listener)
     }
 }

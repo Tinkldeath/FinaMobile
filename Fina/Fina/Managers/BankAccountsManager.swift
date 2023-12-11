@@ -20,7 +20,6 @@ final class BankAccountsManager: BaseManager {
     
     private let firestore = Firestore.firestore()
     private let auth = Auth.auth()
-    private var listeners = [ListenerRegistration]()
     
     func initialize() async {
         guard let uid = auth.currentUser?.uid else { return }
@@ -29,16 +28,29 @@ final class BankAccountsManager: BaseManager {
         observeUserBankAccounts(uid)
     }
     
-    func observeBalance(for uid: String, _ completion: @escaping BalanceClosure) {
-        let listener = firestore.collection(BankAccount.collection()).document(uid).addSnapshotListener { snapshot, error in
+    func fetchBalance(for uid: String, _ completion: @escaping BalanceClosure) {
+        firestore.collection(BankAccount.collection()).document(uid).getDocument { snapshot, error in
             guard let data = snapshot?.data(), let bankAccount = BankAccount(data), error == nil else { completion(nil, nil); return }
             completion(bankAccount.balance, bankAccount.currency)
         }
-        listeners.append(listener)
+    }
+    
+    func observeBalance(for uid: String, _ completion: @escaping BalanceClosure) {
+        firestore.collection(BankAccount.collection()).document(uid).addSnapshotListener { snapshot, error in
+            guard let data = snapshot?.data(), let bankAccount = BankAccount(data), error == nil else { completion(nil, nil); return }
+            completion(bankAccount.balance, bankAccount.currency)
+        }
     }
     
     func fetchBankAccount(_ uid: String, _ completion: @escaping BankAccountClosure) {
         firestore.collection(BankAccount.collection()).document(uid).getDocument { snapshot, error in
+            guard let data = snapshot?.data(), let bankAccount = BankAccount(data), error == nil else { completion(nil); return }
+            completion(bankAccount)
+        }
+    }
+    
+    func observeBankAccount(_ uid: String, _ completion: @escaping BankAccountClosure) {
+        firestore.collection(BankAccount.collection()).document(uid).addSnapshotListener { snapshot, error in
             guard let data = snapshot?.data(), let bankAccount = BankAccount(data), error == nil else { completion(nil); return }
             completion(bankAccount)
         }
@@ -70,7 +82,7 @@ final class BankAccountsManager: BaseManager {
 private extension BankAccountsManager {
     
     private func observeUserBankAccounts(_ uid: String) {
-        let listener = firestore.collection(BankAccount.collection()).whereField("ownerId", isEqualTo: uid).addSnapshotListener { [weak self] snapshot, error in
+        firestore.collection(BankAccount.collection()).whereField("ownerId", isEqualTo: uid).addSnapshotListener { [weak self] snapshot, error in
             guard let documents = snapshot?.documents, error == nil else { return }
             let accounts = documents.compactMap({ BankAccount($0.data()) })
             self?.userBankAccounts.accept(accounts)

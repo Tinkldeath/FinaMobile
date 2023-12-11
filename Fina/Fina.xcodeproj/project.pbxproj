@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3217A6D02B261FF900379E07 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3217A6CF2B261FF900379E07 /* CardsViewController.swift */; };
+		3236028A2B2707C20066C149 /* Extension + Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323602892B2707C20066C149 /* Extension + Double.swift */; };
 		3238B4F02B253703001EC3D8 /* Ciper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3238B4EF2B253703001EC3D8 /* Ciper.swift */; };
 		3238B4F22B25392B001EC3D8 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3238B4F12B25392B001EC3D8 /* UserManager.swift */; };
 		3238B4F42B253BC7001EC3D8 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3238B4F32B253BC7001EC3D8 /* SignInViewModel.swift */; };
@@ -17,6 +18,11 @@
 		3238B4FE2B2548EA001EC3D8 /* TwoFactorAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3238B4FD2B2548EA001EC3D8 /* TwoFactorAuthViewController.swift */; };
 		3238B5002B2548FF001EC3D8 /* TwoFactorAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3238B4FF2B2548FF001EC3D8 /* TwoFactorAuthViewModel.swift */; };
 		3238B5032B254CCC001EC3D8 /* PrepareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3238B5022B254CCC001EC3D8 /* PrepareViewController.swift */; };
+		325A5CD52B26E07400C1ABB7 /* CardDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325A5CD42B26E07400C1ABB7 /* CardDetailsViewController.swift */; };
+		325A5CD72B26E08E00C1ABB7 /* CardDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325A5CD62B26E08E00C1ABB7 /* CardDetailsViewModel.swift */; };
+		325A5CD92B26E78E00C1ABB7 /* TransactionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325A5CD82B26E78E00C1ABB7 /* TransactionsManager.swift */; };
+		325A5CDB2B26E80A00C1ABB7 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325A5CDA2B26E80A00C1ABB7 /* Transaction.swift */; };
+		325A5CDD2B26F0A600C1ABB7 /* TransactionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325A5CDC2B26F0A600C1ABB7 /* TransactionEngine.swift */; };
 		3267FEE42B2532BF00B9E4B0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267FEE32B2532BF00B9E4B0 /* Constants.swift */; };
 		32C90DCB2B267D380025C5B4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DCA2B267D380025C5B4 /* ProfileViewController.swift */; };
 		32C90DCD2B267D590025C5B4 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DCC2B267D590025C5B4 /* ProfileViewModel.swift */; };
@@ -60,6 +66,7 @@
 /* Begin PBXFileReference section */
 		0E2BE9FB88ADA484D64D97A4 /* Pods-Fina.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fina.release.xcconfig"; path = "Target Support Files/Pods-Fina/Pods-Fina.release.xcconfig"; sourceTree = "<group>"; };
 		3217A6CF2B261FF900379E07 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
+		323602892B2707C20066C149 /* Extension + Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Double.swift"; sourceTree = "<group>"; };
 		3238B4EF2B253703001EC3D8 /* Ciper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ciper.swift; sourceTree = "<group>"; };
 		3238B4F12B25392B001EC3D8 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		3238B4F32B253BC7001EC3D8 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
@@ -69,6 +76,11 @@
 		3238B4FD2B2548EA001EC3D8 /* TwoFactorAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoFactorAuthViewController.swift; sourceTree = "<group>"; };
 		3238B4FF2B2548FF001EC3D8 /* TwoFactorAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoFactorAuthViewModel.swift; sourceTree = "<group>"; };
 		3238B5022B254CCC001EC3D8 /* PrepareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareViewController.swift; sourceTree = "<group>"; };
+		325A5CD42B26E07400C1ABB7 /* CardDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsViewController.swift; sourceTree = "<group>"; };
+		325A5CD62B26E08E00C1ABB7 /* CardDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsViewModel.swift; sourceTree = "<group>"; };
+		325A5CD82B26E78E00C1ABB7 /* TransactionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsManager.swift; sourceTree = "<group>"; };
+		325A5CDA2B26E80A00C1ABB7 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		325A5CDC2B26F0A600C1ABB7 /* TransactionEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionEngine.swift; sourceTree = "<group>"; };
 		3267FEE32B2532BF00B9E4B0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		32C90DCA2B267D380025C5B4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		32C90DCC2B267D590025C5B4 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -176,6 +188,15 @@
 			path = Prepare;
 			sourceTree = "<group>";
 		};
+		325A5CD32B26E04700C1ABB7 /* CardDetails */ = {
+			isa = PBXGroup;
+			children = (
+				325A5CD42B26E07400C1ABB7 /* CardDetailsViewController.swift */,
+				325A5CD62B26E08E00C1ABB7 /* CardDetailsViewModel.swift */,
+			);
+			path = CardDetails;
+			sourceTree = "<group>";
+		};
 		32C90DC92B267D210025C5B4 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +264,7 @@
 		32E727C02B2528A20074DAB4 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				325A5CD32B26E04700C1ABB7 /* CardDetails */,
 				32C90DE32B26AFFA0025C5B4 /* AddCard */,
 				32C90DD42B2689E20025C5B4 /* Home */,
 				32C90DC92B267D210025C5B4 /* Profile */,
@@ -284,6 +306,7 @@
 				32E727CB2B2529A80074DAB4 /* Extension + UIStoryboard.swift */,
 				32E727CC2B2529A80074DAB4 /* Extension + UIView.swift */,
 				32C90DE82B26BF4C0025C5B4 /* Extension + Date.swift */,
+				323602892B2707C20066C149 /* Extension + Double.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -326,6 +349,8 @@
 				3238B4F12B25392B001EC3D8 /* UserManager.swift */,
 				32C90DDB2B2698750025C5B4 /* CardsManager.swift */,
 				32C90DDD2B2698840025C5B4 /* BankAccountsManager.swift */,
+				325A5CD82B26E78E00C1ABB7 /* TransactionsManager.swift */,
+				325A5CDC2B26F0A600C1ABB7 /* TransactionEngine.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -338,6 +363,7 @@
 				32C90DD22B2688F00025C5B4 /* Currency.swift */,
 				32C90DDF2B26991B0025C5B4 /* BankAccount.swift */,
 				32C90DE12B269CFA0025C5B4 /* Card.swift */,
+				325A5CDA2B26E80A00C1ABB7 /* Transaction.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -471,13 +497,16 @@
 				3217A6D02B261FF900379E07 /* CardsViewController.swift in Sources */,
 				32E727E12B252CAA0074DAB4 /* BaseViewController.swift in Sources */,
 				32E727D62B252C930074DAB4 /* SignInViewController.swift in Sources */,
+				325A5CD92B26E78E00C1ABB7 /* TransactionsManager.swift in Sources */,
 				3238B4F42B253BC7001EC3D8 /* SignInViewModel.swift in Sources */,
+				325A5CDB2B26E80A00C1ABB7 /* Transaction.swift in Sources */,
 				3238B4FE2B2548EA001EC3D8 /* TwoFactorAuthViewController.swift in Sources */,
 				32C90DCB2B267D380025C5B4 /* ProfileViewController.swift in Sources */,
 				32EFE7592B252F8E00D5103D /* User.swift in Sources */,
 				32C90DE02B26991B0025C5B4 /* BankAccount.swift in Sources */,
 				32C90DE72B26B0C40025C5B4 /* AddCardViewModel.swift in Sources */,
 				32E727DF2B252CAA0074DAB4 /* BaseManager.swift in Sources */,
+				325A5CD52B26E07400C1ABB7 /* CardDetailsViewController.swift in Sources */,
 				32EFE75D2B2530A800D5103D /* TwoFactorAuthManager.swift in Sources */,
 				32C90DD82B268A580025C5B4 /* HomeViewModel.swift in Sources */,
 				32C90DE92B26BF4C0025C5B4 /* Extension + Date.swift in Sources */,
@@ -487,13 +516,16 @@
 				32C90DDC2B2698750025C5B4 /* CardsManager.swift in Sources */,
 				32C90DE52B26B0090025C5B4 /* AddCardViewController.swift in Sources */,
 				32C90DD32B2688F00025C5B4 /* Currency.swift in Sources */,
+				325A5CD72B26E08E00C1ABB7 /* CardDetailsViewModel.swift in Sources */,
 				32C90DDA2B2698170025C5B4 /* CardsViewModel.swift in Sources */,
 				3238B5002B2548FF001EC3D8 /* TwoFactorAuthViewModel.swift in Sources */,
 				32E727AF2B2528990074DAB4 /* SceneDelegate.swift in Sources */,
 				32EFE75B2B252FBB00D5103D /* FirebaseEntity.swift in Sources */,
 				32C90DD12B2680590025C5B4 /* ProfileAction.swift in Sources */,
 				32C90DDE2B2698840025C5B4 /* BankAccountsManager.swift in Sources */,
+				3236028A2B2707C20066C149 /* Extension + Double.swift in Sources */,
 				3238B5032B254CCC001EC3D8 /* PrepareViewController.swift in Sources */,
+				325A5CDD2B26F0A600C1ABB7 /* TransactionEngine.swift in Sources */,
 				32C90DCD2B267D590025C5B4 /* ProfileViewModel.swift in Sources */,
 				32E727DE2B252CAA0074DAB4 /* BaseLoadingView.swift in Sources */,
 				32E727CD2B2529A80074DAB4 /* Extension + LocalAuthentication.swift in Sources */,

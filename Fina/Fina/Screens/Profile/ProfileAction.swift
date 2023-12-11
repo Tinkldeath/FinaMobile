@@ -9,13 +9,16 @@ import Foundation
 import UIKit
 
 enum ProfileAction: Int, CaseIterable {
-    case changeEmail = 0
+    case changePhoto = 0
+    case changeEmail
     case changePassword
     case changeCodePassword
     case deleteAccount
     
     var localizedTitle: String {
         switch self {
+        case .changePhoto:
+            return "Change profile picture"
         case .changeEmail:
             return "Change E-Mail"
         case .changePassword:
@@ -29,6 +32,8 @@ enum ProfileAction: Int, CaseIterable {
     
     var associatedColor: UIColor {
         switch self {
+        case .changePhoto:
+            return .label
         case .changeEmail:
             return .label
         case .changePassword:
@@ -42,6 +47,8 @@ enum ProfileAction: Int, CaseIterable {
     
     var associatedImage: UIImage? {
         switch self {
+        case .changePhoto:
+            return UIImage(systemName: "photo.circle")
         case .changeEmail:
             return UIImage(systemName: "person.circle")
         case .changePassword:

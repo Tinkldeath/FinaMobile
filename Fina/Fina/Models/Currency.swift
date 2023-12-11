@@ -30,11 +30,11 @@ enum Currency: String {
     var title: String {
         switch self {
         case .rub:
-            return "🇷🇺 100 RUB"
+            return " 🇷🇺 100 RUB"
         case .usd:
-            return "🇺🇸 1 USD"
+            return " 🇺🇸 1 USD"
         case .eur:
-            return "🇪🇺 1 EUR"
+            return " 🇪🇺 1 EUR"
         default:
             return ""
         }
@@ -54,7 +54,7 @@ enum Currency: String {
     }
     
     func stringAmount(_ amount: Double) -> String {
-        return self.rawValue + " \(amount)"
+        return self.rawValue + " \(amount.toRounded())"
     }
     
     static var displayCurrencies: [Currency] {

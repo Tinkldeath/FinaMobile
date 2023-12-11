@@ -79,9 +79,22 @@ final class CardsViewController: BaseViewController {
             })
         }.disposed(by: disposeBag)
         
+        tableView.rx.modelSelected(Card.self).asDriver().drive(onNext: { [weak self] card in
+            self?.showCardDetails(card)
+        }).disposed(by: disposeBag)
+        
         addCardButton.rx.tap.asDriver().drive(onNext: { [weak self] _ in
             guard let vc: AddCardViewController = UIStoryboard.instantiateViewController(identifier: "AddCardViewController", storyboard: .main) else { return }
             self?.navigationController?.pushViewController(vc, animated: true)
         }).disposed(by: disposeBag)
+    }
+}
+
+private extension CardsViewController {
+    
+    private func showCardDetails(_ card: Card) {
+        guard let vc: CardDetailsViewController = UIStoryboard.instantiateViewController(identifier: "CardDetailsViewController", storyboard: .main) else { return }
+        vc.viewModel = CardDetailsViewModel(card)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

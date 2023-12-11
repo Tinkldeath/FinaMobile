@@ -15,6 +15,9 @@ final class ManagerFactory {
     let userManager = UserManager()
     let cardsManager = CardsManager()
     let bankAccountsManager = BankAccountsManager()
+    let transactionsManager = TransactionsManager()
+    
+    lazy var transactionEngine = TransactionEngine(bankAccountManager: bankAccountsManager, transactionManager: transactionsManager)
     
     static let shared = ManagerFactory()
     

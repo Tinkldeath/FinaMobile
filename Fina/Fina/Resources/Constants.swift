@@ -9,6 +9,7 @@ import Foundation
 
 
 enum Constants {
+    
     enum Auth {
         static let kAuthPrefersBiometric = "com.finaMobile.Auth.prefersBiometric"
     }

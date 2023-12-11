@@ -27,7 +27,7 @@ final class CardsViewModel {
     }
     
     func observeBalance(for accountId: String, _ observer: @escaping BalanceClosure) {
-        accountsManager.observeBalance(for: accountId) { balance, currency in
+        accountsManager.fetchBalance(for: accountId) { balance, currency in
             guard let balance = balance, let currency = currency else { observer(nil, nil); return }
             observer(balance, currency)
         }
