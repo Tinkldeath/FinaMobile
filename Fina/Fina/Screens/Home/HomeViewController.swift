@@ -15,7 +15,9 @@ final class HomeViewController: BaseViewController {
     
     @IBOutlet private weak var currenciesTableView: UITableView!
     @IBOutlet private weak var accountsTableView: UITableView!
-        
+    @IBOutlet private weak var creditsButton: UIBarButtonItem!
+    @IBOutlet private weak var notificationsButton: UIBarButtonItem!
+    
     override func configure() {
         super.configure()
         
@@ -40,6 +42,16 @@ final class HomeViewController: BaseViewController {
             cell.textLabel?.text = Ciper.unseal(item.contractNumber)
             cell.detailTextLabel?.text = item.currency.rawValue
         }.disposed(by: disposeBag)
+        
+        viewModel?.bankAccountInfoRelay.asDriver(onErrorDriveWith: .never()).drive(onNext: { [weak self] components in
+            guard let vc: CardInfoViewController = UIStoryboard.instantiateViewController(identifier: "CardInfoViewController", storyboard: .main) else { return }
+            vc.viewModel = CardInfoViewModel(card: components.card, account: components.bankAccount)
+            self?.present(vc, animated: true)
+        }).disposed(by: disposeBag)
+        
+        accountsTableView.rx.modelSelected(BankAccount.self).asDriver().drive(onNext: { [weak self] bankAccount in
+            self?.viewModel?.didSelectBankAccount(bankAccount)
+        }).disposed(by: disposeBag)
     }
     
 }

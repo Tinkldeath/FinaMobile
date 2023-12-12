@@ -25,7 +25,16 @@ final class TransactionsManager {
     
     private var transactions = Set<Transaction>() {
         didSet {
-            transactionsRelay.accept(transactions.sorted(by: { $0.date < $1.date }))
+            transactionsRelay.accept(transactions.sorted(by: { $0.date > $1.date }))
+        }
+    }
+    
+    func fetchTransactions(for bankAccountId: String, _ month: Int, _ year: Int, _ completion: @escaping TransactionsClosure) {
+        firestore.collection(Transaction.collection()).whereField("senderBankAccount", isEqualTo: bankAccountId).getDocuments { snapshot, error in
+            guard let documents = snapshot?.documents, error == nil else { completion([]); return }
+            let transactions = documents.compactMap({ Transaction($0.data()) })
+            let filtered = transactions.filter({ $0.date.baseComponents().month == month && $0.date.baseComponents().year == year && ($0.transactionType == .payment || $0.transactionType == .transfer) })
+            completion(filtered)
         }
     }
             

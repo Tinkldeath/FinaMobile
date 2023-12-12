@@ -28,6 +28,17 @@ extension BankAccount {
         case currentAccount = 0
         case savingsAccount
         case creditAccount
+        
+        var localizedTitle: String {
+            switch self {
+            case .currentAccount:
+                return "Current bank account"
+            case .creditAccount:
+                return "Credit bank account"
+            case .savingsAccount:
+                return "Savings bank account"
+            }
+        }
     }
 }
 

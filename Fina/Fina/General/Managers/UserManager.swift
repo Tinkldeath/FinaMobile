@@ -52,6 +52,12 @@ final class UserManager: BaseManager {
         }
     }
     
+    func updateUser(_ updatedUser: User, _ completion: @escaping BoolClosure) {
+        firestore.collection(User.collection()).document(updatedUser.uid).updateData(updatedUser.toEntity()) { error in
+            completion(error == nil)
+        }
+    }
+    
     func signOut() {
         listeners.forEach{ $0.remove() }
         currentUser.accept(nil)

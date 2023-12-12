@@ -17,12 +17,31 @@ struct Transaction {
     var currency: Currency
     var date: Date
     var isCompleted: Bool
+    
+    var transactionTotal: String {
+        switch self.transactionType {
+        case .transfer:
+            return "\(currency.stringAmount(sum))"
+        case .payment:
+            return "- \(currency.stringAmount(sum))"
+        case .obtainingCredit:
+            return "+ \(currency.stringAmount(sum))"
+        case .creditPayment:
+            return "- \(currency.stringAmount(sum))"
+        case .income:
+            return "+ \(currency.stringAmount(sum))"
+        }
+    }
 }
 
-extension Transaction: Hashable {
-    
+extension Transaction: Hashable, Equatable {
+        
     static func == (lhs: Transaction, rhs: Transaction) -> Bool {
         return lhs.uid == rhs.uid
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(uid)
     }
 }
 

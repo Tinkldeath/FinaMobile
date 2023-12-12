@@ -16,8 +16,11 @@ final class ManagerFactory {
     let cardsManager = CardsManager()
     let bankAccountsManager = BankAccountsManager()
     let transactionsManager = TransactionsManager()
+    let creditsManager = CreditsManager()
+    let creditScheduleManager = CreditScheduleManager()
+    let notificationsManager = NotificationsManager()
     
-    lazy var transactionEngine = TransactionEngine(bankAccountManager: bankAccountsManager, transactionManager: transactionsManager)
+    lazy var transactionEngine = TransactionEngine(bankAccountManager: bankAccountsManager, transactionManager: transactionsManager, creditsManager: creditsManager, userManager: userManager, creditScheduleManager: creditScheduleManager, notificationsManager: notificationsManager)
     
     static let shared = ManagerFactory()
     
@@ -27,5 +30,8 @@ final class ManagerFactory {
         await userManager.initialize()
         await cardsManager.initialize()
         await bankAccountsManager.initialize()
+        await creditsManager.initialize()
+        await notificationsManager.initialize()
+        transactionEngine.addAutoPaymentCreditsObserver()
     }
 }
