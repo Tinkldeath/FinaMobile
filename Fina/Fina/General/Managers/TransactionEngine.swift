@@ -69,6 +69,7 @@ final class TransactionEngine {
                                     self?.secondPreviousBankAccountState = nil
                                     self?.transactionId = nil
                                     self?.notifyUser(bankAccount.ownerId, "New credit added", "You've added new credit with sum \(credit.currency.stringAmount(credit.sum)) and duration \(credit.durationMonths) months to \(Ciper.unseal(bankAccount.number))")
+                                    completion?(completed)
                                 })
                             })
                         })
@@ -246,9 +247,9 @@ final class TransactionEngine {
     
 }
 
-fileprivate extension TransactionEngine {
+extension TransactionEngine {
     
-    private func revert() {
+    func revert() {
         if let first = firstPreviousBankAccountState {
             bankAccountManager.updateBankAccount(first) { completed in
                 guard completed else { fatalError("Failed to revert bank account state \(first)") }
@@ -269,7 +270,7 @@ fileprivate extension TransactionEngine {
         transactionId = nil
     }
     
-    private func revertCredit(_ uid: String) {
+    func revertCredit(_ uid: String) {
         creditsManager.deleteCredit(uid) { completed in
             guard completed else { fatalError("Failed to revert credit \(uid)") }
         }
@@ -280,7 +281,7 @@ fileprivate extension TransactionEngine {
         }
     }
     
-    private func autoPaymentForCreditScheduleAttempt(_ credit: Credit, _ schedule: CreditSchedule) {
+    func autoPaymentForCreditScheduleAttempt(_ credit: Credit, _ schedule: CreditSchedule) {
         bankAccountManager.fetchBankAccount(credit.bankAccountId) { [weak self] bankAccount in
             guard var bankAccount = bankAccount else { return }
             let paymentSum = Currency.exchange(amount: schedule.totalSum, from: credit.currency, to: bankAccount.currency)
@@ -302,7 +303,7 @@ fileprivate extension TransactionEngine {
         }
     }
     
-    private func setOverbayForCreditSchedule(_ credit: Credit, _ schedule: CreditSchedule, _ nowComponents: (day: Int, month: Int, year: Int), _ completion: @escaping CreditScheduleCompletionHandler) {
+    func setOverbayForCreditSchedule(_ credit: Credit, _ schedule: CreditSchedule, _ nowComponents: (day: Int, month: Int, year: Int), _ completion: @escaping CreditScheduleCompletionHandler) {
         var creditToUpdate = credit
         var scheduleToUpdate = schedule
         let debtDayCounted = credit.debtDays.first { date in
@@ -320,7 +321,7 @@ fileprivate extension TransactionEngine {
         }
     }
     
-    private func completeTransaction(_ transaction: Transaction) {
+    func completeTransaction(_ transaction: Transaction) {
         var copy = transaction
         copy.isCompleted = true
         transactionManager.updateTransaction(copy) { completed in
@@ -328,7 +329,7 @@ fileprivate extension TransactionEngine {
         }
     }
     
-    private func notifyUser(_ uid: String, _ title: String, _ content: String) {
+    func notifyUser(_ uid: String, _ title: String, _ content: String) {
         let notification = Notification(uid: "", recieverId: uid, title: title, content: content, isRead: false)
         notificationsManager.createNotification(notification) { notificationId in
             guard let notificationId = notificationId else { return }
@@ -336,7 +337,7 @@ fileprivate extension TransactionEngine {
         }
     }
     
-    private func checkLimit(_ bankAccountId: String) {
+    func checkLimit(_ bankAccountId: String) {
         let (_, month, year) = Date.now.baseComponents()
         bankAccountManager.fetchBankAccount(bankAccountId) { [weak self] bankAccount in
             guard let bankAccount = bankAccount, let limit = bankAccount.monthLimit else { return }

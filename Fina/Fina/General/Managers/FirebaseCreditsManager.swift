@@ -13,7 +13,19 @@ import RxSwift
 
 typealias CreditCompletionHandler = (Credit?) -> Void
 
-final class CreditsManager: BaseManager {
+protocol CreditsManager: AnyObject {
+    var currentUserHasCredits: Bool { get }
+    var userCreditsRelay: BehaviorRelay<[Credit]> { get }
+    
+    func createCredit(_ newCredit: Credit, _ completion: @escaping StringClosure)
+    func observeCredit(_ uid: String, _ observer: @escaping CreditCompletionHandler)
+    func fetchCreditAsync(_ uid: String) async -> Credit?
+    func fetchCredit(_ uid: String, _ completion: @escaping CreditCompletionHandler)
+    func updateCredit(_ updateCredit: Credit, _ completion: @escaping BoolClosure)
+    func deleteCredit(_ uid: String, _ completion: @escaping BoolClosure)
+}
+
+final class FirebaseCreditsManager: BaseManager, CreditsManager {
     
     let userCreditsRelay = BehaviorRelay<[Credit]>(value: [])
     
@@ -22,7 +34,7 @@ final class CreditsManager: BaseManager {
     private let disposeBag = DisposeBag()
     
     var currentUserHasCredits: Bool {
-        return userCreditsRelay.value.first(where: { !$0.isPayed }) == nil
+        return userCreditsRelay.value.first(where: { !$0.isPayed }) != nil
     }
     
     func initialize() async {
@@ -76,7 +88,7 @@ final class CreditsManager: BaseManager {
     
 }
 
-private extension CreditsManager {
+private extension FirebaseCreditsManager {
     
     private func fetchUserCreditsAsync(_ uid: String) async -> [Credit] {
         guard let snapshot = try? await firestore.collection(Credit.collection()).whereField("ownerId", isEqualTo: uid).getDocuments() else { return [] }

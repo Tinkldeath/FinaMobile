@@ -53,7 +53,7 @@ final class CardsViewController: BaseViewController {
     override func configure() {
         super.configure()
         
-        viewModel = CardsViewModel()
+        viewModel = CardsViewModel(factory: DefaultManagerFactory.shared)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -94,7 +94,7 @@ private extension CardsViewController {
     
     private func showCardDetails(_ card: Card) {
         guard let vc: CardDetailsViewController = UIStoryboard.instantiateViewController(identifier: "CardDetailsViewController", storyboard: .main) else { return }
-        vc.viewModel = CardDetailsViewModel(card)
+        vc.viewModel = CardDetailsViewModel(card, factory: DefaultManagerFactory.shared)
         navigationController?.pushViewController(vc, animated: true)
     }
 }

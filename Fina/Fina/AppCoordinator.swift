@@ -34,7 +34,7 @@ final class DefaultAppCoordinator: AppCoordinator {
     }
     
     func start() {
-        let authManager = ManagerFactory.shared.authManager
+        let authManager = DefaultManagerFactory.shared.authManager
         if authManager.isPreviouslySigned {
             self.coordinateSignIn()
             self.coordinateTwoFactorAuth()

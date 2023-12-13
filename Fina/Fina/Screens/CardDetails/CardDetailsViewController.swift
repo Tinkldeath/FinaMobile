@@ -70,7 +70,7 @@ final class CardDetailsViewController: BaseViewController {
         
         addCreditButton.rx.tap.asDriver().drive(onNext: { [weak self] _ in
             guard let vc: AddCreditViewController = UIStoryboard.instantiateViewController(identifier: "AddCreditViewController", storyboard: .main), let bankAccount = self?.viewModel?.bankAccountRelay.value else { return }
-            vc.viewModel = AddCreditViewModel(bankAccount: bankAccount)
+            vc.viewModel = AddCreditViewModel(bankAccount: bankAccount, factory: DefaultManagerFactory.shared)
             self?.navigationController?.pushViewController(vc, animated: true)
         }).disposed(by: disposeBag)
         

@@ -57,11 +57,11 @@ final class ChartsViewController: BaseViewController {
     override func configure() {
         super.configure()
         
-        viewModel = ChartsViewModel()
+        viewModel = ChartsViewModel(factory: DefaultManagerFactory.shared)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         viewModel?.fetch()
     }

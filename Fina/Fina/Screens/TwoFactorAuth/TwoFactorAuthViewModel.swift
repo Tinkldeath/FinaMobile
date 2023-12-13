@@ -19,13 +19,15 @@ final class TwoFactorAuthViewModel: BaseLoadingViewModel {
     let enableBiometricEvent = PublishRelay<Void>()
     let fastBiometricEvent = PublishRelay<Void>()
     
-    private let userManager = ManagerFactory.shared.userManager
-    private let twoFactorAuthManager = ManagerFactory.shared.twoFactorAuthManager
-    private let authManager = ManagerFactory.shared.authManager
-    private var codePassword: String?
+    let userManager: UserManager
+    let twoFactorAuthManager: TwoFactorAuthManager
+    let authManager: AuthManager
+    var codePassword: String?
     
-    override init() {
-        super.init()
+    init(factory: ManagerFactory) {
+        self.userManager = factory.userManager
+        self.twoFactorAuthManager = factory.twoFactorAuthManager
+        self.authManager = factory.authManager
         
         biometricType.accept(twoFactorAuthManager.enabledBiometricType)
     }

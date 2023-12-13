@@ -44,7 +44,7 @@ final class ProfileViewController: BaseViewController {
     override func configure() {
         super.configure()
         
-        viewModel = ProfileViewModel()
+        viewModel = ProfileViewModel(factory: DefaultManagerFactory.shared)
         viewModel?.fetch()
     }
     

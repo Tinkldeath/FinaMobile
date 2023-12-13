@@ -64,7 +64,7 @@ final class AddCardViewController: BaseViewController {
     override func configure() {
         super.configure()
         
-        viewModel = AddCardViewModel()
+        viewModel = AddCardViewModel(factory: DefaultManagerFactory.shared)
     }
     
     override func setupView() {

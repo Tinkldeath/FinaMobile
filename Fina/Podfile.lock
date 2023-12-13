@@ -763,6 +763,8 @@ PODS:
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
+  - RxTest (6.5.0):
+    - RxSwift (= 6.5.0)
   - SwiftAlgorithms (1.0.0)
   - SwiftKeychainWrapper (4.0.1)
 
@@ -773,6 +775,7 @@ DEPENDENCIES:
   - FirebaseStorage
   - RxCocoa
   - RxSwift
+  - RxTest
   - SwiftKeychainWrapper
 
 SPEC REPOS:
@@ -798,6 +801,7 @@ SPEC REPOS:
     - RxCocoa
     - RxRelay
     - RxSwift
+    - RxTest
     - SwiftAlgorithms
     - SwiftKeychainWrapper
 
@@ -823,9 +827,10 @@ SPEC CHECKSUMS:
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  RxTest: eb2d23adefc5a5ebf5779c7792fa3edfe6ebcc17
   SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
   SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
 
-PODFILE CHECKSUM: 3e6d0532e9a0ae3e3e1f7fe0a123de2d26fa92fc
+PODFILE CHECKSUM: 08ba33a132e11ffe96e0c5b3d62bfaf1f9c86890
 
 COCOAPODS: 1.11.3

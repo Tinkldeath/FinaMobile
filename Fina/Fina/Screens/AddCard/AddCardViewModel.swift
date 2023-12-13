@@ -16,12 +16,18 @@ final class AddCardViewModel {
     let cardTypes = BehaviorRelay<[Card.CardType]>(value: Card.CardType.allCases)
     let createdRelay = PublishRelay<Void>()
     
-    private let cardsManager = ManagerFactory.shared.cardsManager
-    private let bankAccountsManager = ManagerFactory.shared.bankAccountsManager
-    private let authManager = ManagerFactory.shared.authManager
+    let cardsManager: CardsManager
+    let bankAccountsManager: BankAccountsManager
+    let authManager: AuthManager
     
     private var input: Input?
     private var cardType: Card.CardType?
+    
+    init(factory: ManagerFactory) {
+        self.cardsManager = factory.cardsManager
+        self.bankAccountsManager = factory.bankAccountsManager
+        self.authManager = factory.authManager
+    }
     
     func enterInput(_ input: Input) {
         self.input = input

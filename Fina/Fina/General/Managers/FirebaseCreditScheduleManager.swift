@@ -12,7 +12,16 @@ typealias StringArrayClosure = ([String]) -> Void
 typealias CreditScheduleCompletionHandler = (CreditSchedule?) -> Void
 typealias CreditSchedulesCompletionHandler = ([CreditSchedule]) -> Void
 
-final class CreditScheduleManager {
+protocol CreditScheduleManager: AnyObject {
+    func createSchedule(creditId: String, scheduleItems: [CreditSchedule], _ completion: @escaping StringArrayClosure)
+    func observeSchedule(for credit: Credit, _ observer: @escaping CreditSchedulesCompletionHandler)
+    func fetchSchedule(_ uid: String, _ completion: @escaping CreditScheduleCompletionHandler)
+    func fetchScheduleAsync(_ scheduleIds: [String]) async -> [CreditSchedule]
+    func updateSchedule(_ scheduleToUpdate: CreditSchedule, _ completion: BoolClosure?)
+    func deleteSchedule(_ uid: String, _ completion: BoolClosure?)
+}
+
+final class FirebaseCreditScheduleManager: CreditScheduleManager {
     
     let firestore = Firestore.firestore()
     

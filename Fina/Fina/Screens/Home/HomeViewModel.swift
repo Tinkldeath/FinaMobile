@@ -17,9 +17,14 @@ final class HomeViewModel {
     let accountsRelay = BehaviorRelay<[BankAccount]>(value: [])
     let bankAccountInfoRelay = PublishRelay<BankAccountComponents>()
     
-    private let bankAccountsManager = ManagerFactory.shared.bankAccountsManager
-    private let cardsManager = ManagerFactory.shared.cardsManager
+    let bankAccountsManager: BankAccountsManager
+    let cardsManager: CardsManager
     private let disposeBag = DisposeBag()
+    
+    init(factory: ManagerFactory) {
+        self.bankAccountsManager = factory.bankAccountsManager
+        self.cardsManager = factory.cardsManager
+    }
 
     func fetch() {
         bankAccountsManager.userBankAccounts.asDriver().drive(onNext: { [weak self] accounts in

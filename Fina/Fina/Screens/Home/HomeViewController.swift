@@ -23,8 +23,8 @@ final class HomeViewController: BaseViewController {
     override func configure() {
         super.configure()
         
-        viewModel = HomeViewModel()
-        notificationsViewModel = NotificationsViewModel()
+        viewModel = HomeViewModel(factory: DefaultManagerFactory.shared)
+        notificationsViewModel = NotificationsViewModel(factory: DefaultManagerFactory.shared)
     }
     
     override func viewDidAppear(_ animated: Bool) {

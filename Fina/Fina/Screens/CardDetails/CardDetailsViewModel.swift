@@ -18,14 +18,19 @@ final class CardDetailsViewModel {
     let bankAccountRelay = BehaviorRelay<BankAccount?>(value: nil)
     let canCreateCreditRelay: BehaviorRelay<Bool>
     
-    private let userManager = ManagerFactory.shared.userManager
-    private let bankAccountsManager = ManagerFactory.shared.bankAccountsManager
-    private let transactionsManager = TransactionsManager()
-    private let transactionsEngine = ManagerFactory.shared.transactionEngine
+    let userManager: UserManager
+    let bankAccountsManager: BankAccountsManager
+    let transactionsManager: TransactionsManager
+    let transactionsEngine: TransactionEngine
     
     private let disposeBag = DisposeBag()
     
-    init(_ card: Card) {
+    init(_ card: Card, factory: ManagerFactory) {
+        self.userManager = factory.userManager
+        self.bankAccountsManager = factory.bankAccountsManager
+        self.transactionsManager = FirebaseTransactionsManager()
+        self.transactionsEngine = factory.transactionEngine
+        
         cardRelay = BehaviorRelay<Card>(value: card)
         canCreateCreditRelay = BehaviorRelay<Bool>(value: card.cardType == .credit)
         
@@ -48,6 +53,8 @@ final class CardDetailsViewModel {
         transactionsManager.transactionsRelay.asDriver().drive(onNext: { [weak self] transactions in
             self?.transactionsRelay.accept(transactions)
         }).disposed(by: disposeBag)
+        
+        transactionsManager.observeTransactions(for: card.bankAccountId)
     }
     
     func topUp(_ amount: Double) {

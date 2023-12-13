@@ -45,7 +45,7 @@ final class CreditsViewController: BaseViewController {
     override func configure() {
         super.configure()
         
-        viewModel = CreditsViewModel()
+        viewModel = CreditsViewModel(factory: DefaultManagerFactory.shared)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -63,7 +63,7 @@ final class CreditsViewController: BaseViewController {
         
         tableView.rx.modelSelected(Credit.self).asDriver().drive(onNext: { [weak self] credit in
             guard let vc: CreditDetailsViewController = UIStoryboard.instantiateViewController(identifier: "CreditDetailsViewController", storyboard: .main) else { return }
-            vc.viewModel = CreditDetailsViewModel(credit: credit)
+            vc.viewModel = CreditDetailsViewModel(credit: credit, factory: DefaultManagerFactory.shared)
             self?.navigationController?.pushViewController(vc, animated: true)
         }).disposed(by: disposeBag)
         

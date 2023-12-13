@@ -25,7 +25,7 @@ class SignUpViewController: BaseInputViewController {
     override func configure() {
         super.configure()
         
-        viewModel = SignUpViewModel()
+        viewModel = SignUpViewModel(factory: DefaultManagerFactory.shared)
     }
     
     override func bind() {

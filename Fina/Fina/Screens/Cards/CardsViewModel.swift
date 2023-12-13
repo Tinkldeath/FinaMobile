@@ -14,11 +14,18 @@ final class CardsViewModel {
     
     let cardsRelay = BehaviorRelay<[Card]>(value: [])
     
-    private let cardsManager = ManagerFactory.shared.cardsManager
-    private let accountsManager = ManagerFactory.shared.bankAccountsManager
-    private let authManager = ManagerFactory.shared.authManager
-    private let userManager = ManagerFactory.shared.userManager
-    private let disposeBag = DisposeBag()
+    let cardsManager: CardsManager
+    let accountsManager: BankAccountsManager
+    let authManager: AuthManager
+    let userManager: UserManager
+    let disposeBag = DisposeBag()
+    
+    init(factory: ManagerFactory) {
+        self.cardsManager = factory.cardsManager
+        self.accountsManager = factory.bankAccountsManager
+        self.authManager = factory.authManager
+        self.userManager = factory.userManager
+    }
     
     func fetch() {
         cardsManager.userCards.asDriver().drive(onNext: { [weak self] cards in

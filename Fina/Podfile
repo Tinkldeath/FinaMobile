@@ -10,4 +10,13 @@ target 'Fina' do
   pod 'FirebaseFirestore'
   pod 'FirebaseStorage'
   pod 'SwiftKeychainWrapper'
+  
+  target 'FinaTests' do
+    use_frameworks!
+    
+    pod 'RxSwift'
+    pod 'RxCocoa'
+    pod 'RxTest'
+    
+    end
 end

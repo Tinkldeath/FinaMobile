@@ -13,7 +13,17 @@ import RxCocoa
 
 typealias TransactionsClosure = ([Transaction]) -> Void
 
-final class TransactionsManager {
+protocol TransactionsManager: AnyObject {
+    var transactionsRelay: BehaviorRelay<[Transaction]> { get }
+    
+    func fetchTransactions(for bankAccountId: String, _ month: Int, _ year: Int, _ completion: @escaping TransactionsClosure)
+    func createTransaction(_ newTransaction: Transaction, _ completion: @escaping StringClosure)
+    func updateTransaction(_ newTransaction: Transaction, _ completion: @escaping BoolClosure)
+    func deleteTransaction(_ uid: String, _ completion: @escaping BoolClosure)
+    func observeTransactions(for bankAccountId: String)
+}
+
+final class FirebaseTransactionsManager: TransactionsManager {
     
     let transactionsRelay = BehaviorRelay<[Transaction]>(value: [])
     
