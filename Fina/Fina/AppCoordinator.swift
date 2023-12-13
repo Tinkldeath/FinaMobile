@@ -16,6 +16,7 @@ protocol AppCoordinator {
     func coordinateTwoFactorAuth()
     func coordinateMain()
     func back()
+    func coordinateToRoot()
 }
 
 final class DefaultAppCoordinator: AppCoordinator {
@@ -35,6 +36,7 @@ final class DefaultAppCoordinator: AppCoordinator {
     func start() {
         let authManager = ManagerFactory.shared.authManager
         if authManager.isPreviouslySigned {
+            self.coordinateSignIn()
             self.coordinateTwoFactorAuth()
         } else {
             self.coordinateSignIn()
@@ -56,7 +58,8 @@ final class DefaultAppCoordinator: AppCoordinator {
     }
     
     func coordinateMain() {
-        guard let vc: UITabBarController = UIStoryboard.instantiateViewController(identifier: "MainViewController", storyboard: .main) else { return }
+        guard let vc: BaseTabBarController = UIStoryboard.instantiateViewController(identifier: "MainViewController", storyboard: .main) else { return }
+        vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
     
@@ -70,6 +73,10 @@ final class DefaultAppCoordinator: AppCoordinator {
         guard let vc: SignUpViewController = UIStoryboard.instantiateViewController(identifier: "SignUpViewController", storyboard: .auth) else { return }
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func coordinateToRoot() {
+        navigationController.popToRootViewController(animated: true)
     }
     
     func back() {

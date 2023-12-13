@@ -22,7 +22,7 @@ extension Notification: FirebaseEntity {
     }
     
     init?(_ from: [String : Any]) {
-        guard let uid = from["uid"] as? String, let recieverId = from["recieverId"] as? String, let title = from["title"] as? String, let content = from["conent"] as? String, let isRead = from["isRead"] as? Bool else { return nil }
+        guard let uid = from["uid"] as? String, let recieverId = from["recieverId"] as? String, let title = from["title"] as? String, let content = from["content"] as? String, let isRead = from["isRead"] as? Bool else { return nil }
         self.uid = uid
         self.recieverId = recieverId
         self.title = title

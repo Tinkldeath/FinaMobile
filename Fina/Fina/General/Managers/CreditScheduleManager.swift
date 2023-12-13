@@ -10,6 +10,7 @@ import FirebaseFirestore
 
 typealias StringArrayClosure = ([String]) -> Void
 typealias CreditScheduleCompletionHandler = (CreditSchedule?) -> Void
+typealias CreditSchedulesCompletionHandler = ([CreditSchedule]) -> Void
 
 final class CreditScheduleManager {
     
@@ -27,6 +28,14 @@ final class CreditScheduleManager {
                 results.append(copy.uid)
             }
             completion(results)
+        }
+    }
+    
+    func observeSchedule(for credit: Credit, _ observer: @escaping CreditSchedulesCompletionHandler) {
+        firestore.collection(CreditSchedule.collection()).whereField("creditId", isEqualTo: credit.uid).addSnapshotListener { snapshot, error in
+            guard let documents = snapshot?.documents, error == nil else { return }
+            let schedules = documents.compactMap({ CreditSchedule($0.data()) }).sorted(by: { $0.date < $1.date })
+            observer(schedules)
         }
     }
     

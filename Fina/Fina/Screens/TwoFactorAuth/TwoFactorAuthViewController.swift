@@ -83,7 +83,8 @@ class TwoFactorAuthViewController: BaseInputViewController {
 extension TwoFactorAuthViewController {
     
     private func showBiometricAlert() {
-        let ac = UIAlertController(title: "Enable biometric", message: "Do you want to enable biometric authentication?", preferredStyle: .alert)
+        guard let biometricType = viewModel?.biometricType.value else { return }
+        let ac = UIAlertController(title: "Enable \(biometricType.rawValue)", message: "Do you want to enable \(biometricType.rawValue) for fast authentication?", preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "Enable", style: .default, handler: { [weak self] _ in
             self?.viewModel?.setEnableBiometric(true)
         }))

@@ -18,6 +18,15 @@
 		323584972B28D3DD00226967 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323584962B28D3DD00226967 /* NotificationsManager.swift */; };
 		3235849B2B28E81A00226967 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323584992B28E81A00226967 /* TextViewController.swift */; };
 		3235849C2B28E81A00226967 /* TextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3235849A2B28E81A00226967 /* TextViewModel.swift */; };
+		3235849E2B290DA500226967 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3235849D2B290DA500226967 /* BaseTabBarController.swift */; };
+		323584A12B2916BD00226967 /* CreditDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323584A02B2916BD00226967 /* CreditDetailsViewController.swift */; };
+		323584A32B29193E00226967 /* CreditDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323584A22B29193E00226967 /* CreditDetailsViewModel.swift */; };
+		323584A62B29263800226967 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323584A52B29263800226967 /* NotificationsViewController.swift */; };
+		323584A82B29264A00226967 /* NotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323584A72B29264A00226967 /* NotificationsViewModel.swift */; };
+		323584AA2B29295F00226967 /* Extension + UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323584A92B29295F00226967 /* Extension + UIBarButtonItem.swift */; };
+		323584AD2B29321000226967 /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323584AC2B29321000226967 /* ChartsViewController.swift */; };
+		323584AF2B29329B00226967 /* ChartsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323584AE2B29329B00226967 /* ChartsViewModel.swift */; };
+		323584B12B29334D00226967 /* ChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323584B02B29334D00226967 /* ChartModel.swift */; };
 		3236028A2B2707C20066C149 /* Extension + Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323602892B2707C20066C149 /* Extension + Double.swift */; };
 		3236028D2B271D350066C149 /* CardInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236028C2B271D350066C149 /* CardInfoViewController.swift */; };
 		3236028F2B271D580066C149 /* CardInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236028E2B271D580066C149 /* CardInfoViewModel.swift */; };
@@ -42,6 +51,7 @@
 		325A5CDB2B26E80A00C1ABB7 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325A5CDA2B26E80A00C1ABB7 /* Transaction.swift */; };
 		325A5CDD2B26F0A600C1ABB7 /* TransactionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325A5CDC2B26F0A600C1ABB7 /* TransactionEngine.swift */; };
 		3267FEE42B2532BF00B9E4B0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267FEE32B2532BF00B9E4B0 /* Constants.swift */; };
+		327FD1942B29475A007F4E7C /* MediaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327FD1932B29475A007F4E7C /* MediaManager.swift */; };
 		32C90DCB2B267D380025C5B4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DCA2B267D380025C5B4 /* ProfileViewController.swift */; };
 		32C90DCD2B267D590025C5B4 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DCC2B267D590025C5B4 /* ProfileViewModel.swift */; };
 		32C90DD12B2680590025C5B4 /* ProfileAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DD02B2680590025C5B4 /* ProfileAction.swift */; };
@@ -94,6 +104,15 @@
 		323584962B28D3DD00226967 /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
 		323584992B28E81A00226967 /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		3235849A2B28E81A00226967 /* TextViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewModel.swift; sourceTree = "<group>"; };
+		3235849D2B290DA500226967 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		323584A02B2916BD00226967 /* CreditDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditDetailsViewController.swift; sourceTree = "<group>"; };
+		323584A22B29193E00226967 /* CreditDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditDetailsViewModel.swift; sourceTree = "<group>"; };
+		323584A52B29263800226967 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		323584A72B29264A00226967 /* NotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewModel.swift; sourceTree = "<group>"; };
+		323584A92B29295F00226967 /* Extension + UIBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension + UIBarButtonItem.swift"; sourceTree = "<group>"; };
+		323584AC2B29321000226967 /* ChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
+		323584AE2B29329B00226967 /* ChartsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsViewModel.swift; sourceTree = "<group>"; };
+		323584B02B29334D00226967 /* ChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartModel.swift; sourceTree = "<group>"; };
 		323602892B2707C20066C149 /* Extension + Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Double.swift"; sourceTree = "<group>"; };
 		3236028C2B271D350066C149 /* CardInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoViewController.swift; sourceTree = "<group>"; };
 		3236028E2B271D580066C149 /* CardInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoViewModel.swift; sourceTree = "<group>"; };
@@ -118,6 +137,7 @@
 		325A5CDA2B26E80A00C1ABB7 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		325A5CDC2B26F0A600C1ABB7 /* TransactionEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionEngine.swift; sourceTree = "<group>"; };
 		3267FEE32B2532BF00B9E4B0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		327FD1932B29475A007F4E7C /* MediaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaManager.swift; sourceTree = "<group>"; };
 		32C90DCA2B267D380025C5B4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		32C90DCC2B267D590025C5B4 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		32C90DD02B2680590025C5B4 /* ProfileAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAction.swift; sourceTree = "<group>"; };
@@ -207,6 +227,25 @@
 			path = Text;
 			sourceTree = "<group>";
 		};
+		323584A42B29262300226967 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				323584A52B29263800226967 /* NotificationsViewController.swift */,
+				323584A72B29264A00226967 /* NotificationsViewModel.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		323584AB2B29320300226967 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				323584AC2B29321000226967 /* ChartsViewController.swift */,
+				323584AE2B29329B00226967 /* ChartsViewModel.swift */,
+				323584B02B29334D00226967 /* ChartModel.swift */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
 		3236028B2B271D1F0066C149 /* CardInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +277,8 @@
 		323602982B27301F0066C149 /* CreditDetails */ = {
 			isa = PBXGroup;
 			children = (
+				323584A02B2916BD00226967 /* CreditDetailsViewController.swift */,
+				323584A22B29193E00226967 /* CreditDetailsViewModel.swift */,
 			);
 			path = CreditDetails;
 			sourceTree = "<group>";
@@ -344,6 +385,8 @@
 		32E727C02B2528A20074DAB4 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				323584AB2B29320300226967 /* Charts */,
+				323584A42B29262300226967 /* Notifications */,
 				323584982B28E80700226967 /* Text */,
 				323602982B27301F0066C149 /* CreditDetails */,
 				323602972B2730180066C149 /* AddCredit */,
@@ -385,6 +428,7 @@
 		32E727C72B2529A80074DAB4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				323584A92B29295F00226967 /* Extension + UIBarButtonItem.swift */,
 				32E727C82B2529A80074DAB4 /* Extension + LocalAuthentication.swift */,
 				32E727C92B2529A80074DAB4 /* Extension + Collection.swift */,
 				32E727CA2B2529A80074DAB4 /* Extension + String.swift */,
@@ -424,6 +468,7 @@
 				32E727DA2B252CAA0074DAB4 /* BaseManager.swift */,
 				32E727DC2B252CAA0074DAB4 /* BaseViewController.swift */,
 				3238B4FA2B253DA8001EC3D8 /* BaseLoadingViewModel.swift */,
+				3235849D2B290DA500226967 /* BaseTabBarController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -442,6 +487,7 @@
 				321696F52B2754A80061C2F9 /* CreditsManager.swift */,
 				3200AFA82B276792001157BF /* CreditScheduleManager.swift */,
 				323584962B28D3DD00226967 /* NotificationsManager.swift */,
+				327FD1932B29475A007F4E7C /* MediaManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -583,6 +629,8 @@
 				323602952B272EB50066C149 /* CreditCalculator.swift in Sources */,
 				32E727D02B2529A80074DAB4 /* Extension + UIStoryboard.swift in Sources */,
 				3238B4FB2B253DA8001EC3D8 /* BaseLoadingViewModel.swift in Sources */,
+				323584A12B2916BD00226967 /* CreditDetailsViewController.swift in Sources */,
+				323584A62B29263800226967 /* NotificationsViewController.swift in Sources */,
 				32EFE7562B252EDD00D5103D /* AuthManager.swift in Sources */,
 				32C90DE22B269CFA0025C5B4 /* Card.swift in Sources */,
 				3200AFA72B276351001157BF /* CreditSchedule.swift in Sources */,
@@ -604,12 +652,15 @@
 				325A5CDB2B26E80A00C1ABB7 /* Transaction.swift in Sources */,
 				3238B4FE2B2548EA001EC3D8 /* TwoFactorAuthViewController.swift in Sources */,
 				32C90DCB2B267D380025C5B4 /* ProfileViewController.swift in Sources */,
+				323584A32B29193E00226967 /* CreditDetailsViewModel.swift in Sources */,
+				327FD1942B29475A007F4E7C /* MediaManager.swift in Sources */,
 				3235849B2B28E81A00226967 /* TextViewController.swift in Sources */,
 				32EFE7592B252F8E00D5103D /* User.swift in Sources */,
 				32C90DE02B26991B0025C5B4 /* BankAccount.swift in Sources */,
 				32C90DE72B26B0C40025C5B4 /* AddCardViewModel.swift in Sources */,
 				32E727DF2B252CAA0074DAB4 /* BaseManager.swift in Sources */,
 				325A5CD52B26E07400C1ABB7 /* CardDetailsViewController.swift in Sources */,
+				3235849E2B290DA500226967 /* BaseTabBarController.swift in Sources */,
 				32EFE75D2B2530A800D5103D /* TwoFactorAuthManager.swift in Sources */,
 				32C90DD82B268A580025C5B4 /* HomeViewModel.swift in Sources */,
 				32C90DE92B26BF4C0025C5B4 /* Extension + Date.swift in Sources */,
@@ -617,12 +668,14 @@
 				3236029E2B2732930066C149 /* TwoFactorConfirmViewController.swift in Sources */,
 				32E727CE2B2529A80074DAB4 /* Extension + Collection.swift in Sources */,
 				32EFE7542B252EB700D5103D /* ManagerFactory.swift in Sources */,
+				323584AA2B29295F00226967 /* Extension + UIBarButtonItem.swift in Sources */,
 				3236028F2B271D580066C149 /* CardInfoViewModel.swift in Sources */,
 				32C90DDC2B2698750025C5B4 /* CardsManager.swift in Sources */,
 				323584952B28D10000226967 /* Notification.swift in Sources */,
 				32C90DE52B26B0090025C5B4 /* AddCardViewController.swift in Sources */,
 				32C90DD32B2688F00025C5B4 /* Currency.swift in Sources */,
 				325A5CD72B26E08E00C1ABB7 /* CardDetailsViewModel.swift in Sources */,
+				323584B12B29334D00226967 /* ChartModel.swift in Sources */,
 				32C90DDA2B2698170025C5B4 /* CardsViewModel.swift in Sources */,
 				3200AFAB2B27759E001157BF /* AddCreditViewController.swift in Sources */,
 				3238B5002B2548FF001EC3D8 /* TwoFactorAuthViewModel.swift in Sources */,
@@ -631,7 +684,9 @@
 				32C90DD12B2680590025C5B4 /* ProfileAction.swift in Sources */,
 				321696F42B27541D0061C2F9 /* CreditsViewModel.swift in Sources */,
 				3235849C2B28E81A00226967 /* TextViewModel.swift in Sources */,
+				323584AF2B29329B00226967 /* ChartsViewModel.swift in Sources */,
 				32C90DDE2B2698840025C5B4 /* BankAccountsManager.swift in Sources */,
+				323584AD2B29321000226967 /* ChartsViewController.swift in Sources */,
 				3236028A2B2707C20066C149 /* Extension + Double.swift in Sources */,
 				3238B5032B254CCC001EC3D8 /* PrepareViewController.swift in Sources */,
 				325A5CDD2B26F0A600C1ABB7 /* TransactionEngine.swift in Sources */,
@@ -644,6 +699,7 @@
 				32C90DD62B2689FB0025C5B4 /* HomeViewController.swift in Sources */,
 				3238B4F02B253703001EC3D8 /* Ciper.swift in Sources */,
 				3238B4F22B25392B001EC3D8 /* UserManager.swift in Sources */,
+				323584A82B29264A00226967 /* NotificationsViewModel.swift in Sources */,
 				3267FEE42B2532BF00B9E4B0 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

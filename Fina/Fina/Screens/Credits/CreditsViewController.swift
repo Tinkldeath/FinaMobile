@@ -16,8 +16,13 @@ final class CreditCell: UITableViewCell {
             guard let credit = credit else { return }
             creditSumLabel.text = "\(credit.currency.stringAmount(credit.sum))"
             creditMonths.text = " \(credit.durationMonths) Months"
-            creditStatus.backgroundColor = credit.isPayed ? .green : .blue
-            creditStatus.setTitle(credit.isPayed ? "Payed" : "Active", for: .normal)
+            creditStatus.tintColor = credit.isPayed ? .green : .blue
+            let titleString = credit.isPayed ? "Payed" : "Active"
+            let attributedTitle = NSAttributedString(string: titleString, attributes: [
+                .font: UIFont.systemFont(ofSize: 13, weight: .bold),
+                .foregroundColor: UIColor.white
+            ])
+            creditStatus.setAttributedTitle(attributedTitle, for: .normal)
         }
     }
     
@@ -35,7 +40,6 @@ final class CreditsViewController: BaseViewController {
     private var viewModel: CreditsViewModel?
     
     @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var addCreditButton: UIBarButtonItem!
     @IBOutlet private weak var backButton: UIBarButtonItem!
     
     override func configure() {
@@ -57,12 +61,10 @@ final class CreditsViewController: BaseViewController {
             cell.credit = item
         }.disposed(by: disposeBag)
         
-        tableView.rx.modelSelected(Credit.self).asDriver().drive(onNext: { credit in
-            
-        }).disposed(by: disposeBag)
-        
-        addCreditButton.rx.tap.asDriver().drive(onNext: { _ in
-            
+        tableView.rx.modelSelected(Credit.self).asDriver().drive(onNext: { [weak self] credit in
+            guard let vc: CreditDetailsViewController = UIStoryboard.instantiateViewController(identifier: "CreditDetailsViewController", storyboard: .main) else { return }
+            vc.viewModel = CreditDetailsViewModel(credit: credit)
+            self?.navigationController?.pushViewController(vc, animated: true)
         }).disposed(by: disposeBag)
         
         backButton.rx.tap.asDriver().drive(onNext: { [weak self] _ in

@@ -19,6 +19,7 @@ final class ManagerFactory {
     let creditsManager = CreditsManager()
     let creditScheduleManager = CreditScheduleManager()
     let notificationsManager = NotificationsManager()
+    let mediaManager = MediaManager()
     
     lazy var transactionEngine = TransactionEngine(bankAccountManager: bankAccountsManager, transactionManager: transactionsManager, creditsManager: creditsManager, userManager: userManager, creditScheduleManager: creditScheduleManager, notificationsManager: notificationsManager)
     

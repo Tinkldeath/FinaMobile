@@ -43,15 +43,15 @@ final class NotificationsManager: BaseManager {
         }
     }
     
-    func updateNotification(_ updateNotification: Notification, _ completion: @escaping BoolClosure) {
+    func updateNotification(_ updateNotification: Notification, _ completion: BoolClosure? = nil) {
         firestore.collection(Notification.collection()).document(updateNotification.uid).updateData(updateNotification.toEntity()) { error in
-            completion(error == nil)
+            completion?(error == nil)
         }
     }
     
-    func deleteNotification(_ uid: String, _ completion: @escaping BoolClosure) {
+    func deleteNotification(_ uid: String, _ completion: BoolClosure? = nil) {
         firestore.collection(Notification.collection()).document(uid).delete { error in
-            completion(error == nil)
+            completion?(error == nil)
         }
     }
     

@@ -98,17 +98,15 @@ final class TransactionEngine {
                         }
                     })
                 }
-            }
-            Task { [weak self] in
-                guard var credit = await self?.creditsManager.fetchCreditAsync(creditId), let schedule = await self?.creditScheduleManager.fetchScheduleAsync(credit.schedule) else { return }
-                var isCreditFullPayed = true
-                for item in schedule {
-                    guard item.isPayed else { isCreditFullPayed = false; break }
-                }
-                guard isCreditFullPayed else { return }
-                credit.isPayed = true
-                self?.creditsManager.updateCredit(credit, { completed in
-                    guard completed else { print("WARNING: Credit \(creditId) is full payed but did not updated"); return }
+                self?.creditScheduleManager.observeSchedule(for: credit, { schedule in
+                    for scheduleItem in schedule {
+                        guard scheduleItem.isPayed else { return }
+                    }
+                    var copy = credit
+                    copy.isPayed = true
+                    self?.creditsManager.updateCredit(copy, { completed in
+                        guard completed else { print("WARNING: Must set credit \(credit.uid) to payed but did not set"); return }
+                    })
                 })
             }
         }
@@ -120,22 +118,23 @@ final class TransactionEngine {
         }).disposed(by: disposeBag)
     }
     
-    func payForCreditSchedule(credit: Credit, schedule: CreditSchedule) {
+    func payForCreditSchedule(credit: Credit, schedule: CreditSchedule, _ completion: BoolClosure? = nil) {
         bankAccountManager.fetchBankAccount(credit.bankAccountId) { [weak self] bankAccount in
-            guard var bankAccount = bankAccount else { return }
+            guard var bankAccount = bankAccount else { completion?(false); return }
             let paymentSum = Currency.exchange(amount: schedule.totalSum, from: credit.currency, to: bankAccount.currency)
-            guard bankAccount.balance - paymentSum >= 0 else { return }
+            guard bankAccount.balance - paymentSum >= 0 else { completion?(false); return }
             bankAccount.balance -= paymentSum
             self?.bankAccountManager.updateBankAccount(bankAccount, { completed in
-                guard completed else { print("WARNING: Failed to reduce bank account \(bankAccount.uid) by \(paymentSum)"); return }
+                guard completed else { completion?(false); return }
                 var scheduleToUpdate = schedule
                 scheduleToUpdate.isPayed = true
                 self?.creditScheduleManager.updateSchedule(scheduleToUpdate) { updated in
-                    guard updated else { print("WARNING: Failed to update schedule \(schedule.uid) with autoPaymemnt completion"); return }
+                    guard updated else { completion?(false); return }
                     let transaction = Transaction(uid: "", transactionType: .creditPayment, senderBankAccount: credit.bankAccountId, recieverBankAccount: nil, sum: paymentSum, currency: bankAccount.currency, date: Date.now, isCompleted: true)
                     self?.transactionManager.createTransaction(transaction, { transactionId in
-                        guard let _ = transactionId else { print("WARNING: Failed to log transaction on credit payment for schedule: \(schedule.uid)"); return }
+                        guard let _ = transactionId else { completion?(false); return }
                         self?.notifyUser(credit.ownerId, "Credit payment succeed", "Credit payment in the amount of \(credit.currency.stringAmount(scheduleToUpdate.totalSum)) for payment date \(scheduleToUpdate.date.formatted()) is successfully payed")
+                        completion?(true)
                     })
                 }
             })

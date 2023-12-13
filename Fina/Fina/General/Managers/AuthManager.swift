@@ -54,13 +54,26 @@ final class AuthManager {
         })
     }
     
-    func logout(_ completion: @escaping BoolClosure) {
+    func changeEmail(_ newEmail: String, _ completion: StringClosure? = nil) {
+        auth.currentUser?.updateEmail(to: newEmail, completion: { error in
+            guard error == nil else { completion?(nil); print(String(describing: error)); return }
+            completion?(newEmail)
+        })
+    }
+    
+    func changePassword(_ newPassword: String, _ completion: BoolClosure? = nil) {
+        auth.currentUser?.updatePassword(to: newPassword, completion: { error in
+            completion?(error == nil)
+        })
+    }
+    
+    func logout(_ completion: BoolClosure? = nil) {
         do {
             try auth.signOut()
-            completion(true)
+            completion?(true)
         } catch {
             print(String(describing: error))
-            completion(false)
+            completion?(false)
         }
     }
 }

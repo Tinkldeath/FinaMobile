@@ -21,6 +21,10 @@ final class CreditsManager: BaseManager {
     private let firestore = Firestore.firestore()
     private let disposeBag = DisposeBag()
     
+    var currentUserHasCredits: Bool {
+        return userCreditsRelay.value.first(where: { !$0.isPayed }) == nil
+    }
+    
     func initialize() async {
         guard let uid = auth.currentUser?.uid else { return }
         let credits = await fetchUserCreditsAsync(uid)
@@ -35,6 +39,14 @@ final class CreditsManager: BaseManager {
         reference.setData(copy.toEntity()) { error in
             guard error == nil else { completion(nil); return }
             completion(copy.uid)
+        }
+    }
+    
+    func observeCredit(_ uid: String, _ observer: @escaping CreditCompletionHandler) {
+        firestore.collection(Credit.collection()).document(uid).addSnapshotListener { snapshot, error in
+            guard let document = snapshot?.data(), error == nil else { return }
+            let credit = Credit(document)
+            observer(credit)
         }
     }
     
@@ -64,7 +76,6 @@ final class CreditsManager: BaseManager {
     
 }
 
-
 private extension CreditsManager {
     
     private func fetchUserCreditsAsync(_ uid: String) async -> [Credit] {
@@ -80,5 +91,4 @@ private extension CreditsManager {
             self?.userCreditsRelay.accept(credits)
         }
     }
-    
 }

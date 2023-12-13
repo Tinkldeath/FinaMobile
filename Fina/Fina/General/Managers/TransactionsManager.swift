@@ -37,6 +37,22 @@ final class TransactionsManager {
             completion(filtered)
         }
     }
+    
+    func fetchTransactions(for bankAccountId: String, _ completion: @escaping TransactionsClosure) {
+        firestore.collection(Transaction.collection()).getDocuments { snapshot, error in
+            guard let documents = snapshot?.documents, error == nil else { completion([]); return }
+            let transactions = documents.compactMap({ Transaction($0.data()) }).filter({ $0.senderBankAccount == bankAccountId || $0.recieverBankAccount == bankAccountId })
+            let nowComponents = Date.now.baseComponents()
+            var results = Set<Transaction>()
+            for i in 1...12 {
+                let filtered = transactions.filter({ $0.date.baseComponents().year == nowComponents.year && $0.date.baseComponents().month == i })
+                for filter in filtered {
+                    results.insert(filter)
+                }
+            }
+            completion(results.map({ $0 }))
+        }
+    }
             
     func createTransaction(_ newTransaction: Transaction, _ completion: @escaping StringClosure) {
         let reference = firestore.collection(Transaction.collection()).document()
