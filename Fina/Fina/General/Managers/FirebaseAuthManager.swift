@@ -11,7 +11,25 @@ import RxRelay
 
 typealias AuthCompletionHandler = (Bool, String?) -> Void
 
-final class AuthManager {
+protocol AuthManager: AnyObject {
+    var currentUser: BehaviorRelay<String?> { get }
+    var isPreviouslySigned: Bool { get }
+    var currentUserEmail: String? { get }
+    
+    func signUp(_ input: AuthManagerUserInput, _ completion: @escaping AuthCompletionHandler)
+    func signIn(_ input: AuthManagerUserInput, _ completion: @escaping AuthCompletionHandler)
+    func deleteUser(_ completion: @escaping BoolClosure)
+    func changeEmail(_ newEmail: String, _ completion: StringClosure?)
+    func changePassword(_ newPassword: String, _ completion: BoolClosure?)
+    func logout(_ completion: BoolClosure?)
+}
+
+struct AuthManagerUserInput {
+    var email: String
+    var password: String
+}
+
+final class FirebaseAuthManager: AuthManager {
     
     let currentUser = BehaviorRelay<String?>(value: nil)
     
@@ -30,7 +48,7 @@ final class AuthManager {
         currentUser.accept(auth.currentUser?.uid)
     }
     
-    func signUp(_ input: UserInput, _ completion: @escaping AuthCompletionHandler) {
+    func signUp(_ input: AuthManagerUserInput, _ completion: @escaping AuthCompletionHandler) {
         auth.createUser(withEmail: input.email, password: input.password) { [weak self] result, error in
             guard error == nil else { completion(false, error?.localizedDescription); return }
             guard let uid = result?.user.uid else { completion(false, "Unknown user"); return }
@@ -39,7 +57,7 @@ final class AuthManager {
         }
     }
     
-    func signIn(_ input: UserInput, _ completion: @escaping AuthCompletionHandler) {
+    func signIn(_ input: AuthManagerUserInput, _ completion: @escaping AuthCompletionHandler) {
         auth.signIn(withEmail: input.email, password: input.password) { [weak self] result, error in
             guard error == nil else { completion(false, error?.localizedDescription); return }
             guard let uid = result?.user.uid else { completion(false, "Unknown user"); return }
@@ -75,13 +93,5 @@ final class AuthManager {
             print(String(describing: error))
             completion?(false)
         }
-    }
-}
-
-extension AuthManager {
-        
-    struct UserInput {
-        var email: String
-        var password: String
     }
 }

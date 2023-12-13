@@ -22,7 +22,7 @@ class TwoFactorAuthViewController: BaseInputViewController {
     override func configure() {
         super.configure()
         
-        viewModel = TwoFactorAuthViewModel()
+        viewModel = TwoFactorAuthViewModel(factory: DefaultManagerFactory.shared)
     }
     
     override func viewDidAppear(_ animated: Bool) {

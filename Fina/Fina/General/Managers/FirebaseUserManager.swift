@@ -12,7 +12,18 @@ import FirebaseAuth
 
 typealias UserCompletionHandler = (User?) -> Void
 
-final class UserManager: BaseManager {
+protocol UserManager: AnyObject {
+    var currentUser: BehaviorRelay<User?> { get }
+    
+    func getUser(uid: String, _ completion: @escaping UserCompletionHandler)
+    func getCurrentUser(_ uid: String)
+    func createUser(_ newUser: User, _ completion: @escaping BoolClosure)
+    func updateUser(_ updatedUser: User, _ completion: @escaping BoolClosure)
+    func deleteUser(_ uid: String, _ completion: @escaping BoolClosure)
+    func signOut()
+}
+
+final class FirebaseUserManager: BaseManager, UserManager {
     
     let currentUser = BehaviorRelay<User?>(value: nil)
     
@@ -71,7 +82,7 @@ final class UserManager: BaseManager {
     
 }
 
-private extension UserManager {
+private extension FirebaseUserManager {
     
     private func observeCurrentUserChanges(_ uid: String) {
         let reference = firestore.collection(User.collection()).document(uid).addSnapshotListener { [weak self] snapshot, error in

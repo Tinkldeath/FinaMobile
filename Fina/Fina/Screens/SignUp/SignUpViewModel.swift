@@ -15,10 +15,16 @@ final class SignUpViewModel: BaseLoadingViewModel {
     let enableBiometricEvent = PublishRelay<Void>()
     let prepareEvent = PublishRelay<Void>()
     
-    private let authManager = ManagerFactory.shared.authManager
-    private let userManager = ManagerFactory.shared.userManager
-    private let twoAuthFactorManager = ManagerFactory.shared.twoFactorAuthManager
+    let authManager: AuthManager
+    let userManager: UserManager
+    let twoAuthFactorManager: TwoFactorAuthManager
     private var input: Input?
+    
+    init(factory: ManagerFactory) {
+        self.authManager = factory.authManager
+        self.userManager = factory.userManager
+        self.twoAuthFactorManager = factory.twoFactorAuthManager
+    }
 
     func enterInput(_ input: Input) {
         self.input = input

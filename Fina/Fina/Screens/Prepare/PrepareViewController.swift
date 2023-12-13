@@ -13,7 +13,7 @@ class PrepareViewController: BaseViewController {
         super.viewDidAppear(animated)
         
         Task {
-            await ManagerFactory.shared.initialize()
+            await DefaultManagerFactory.shared.initialize()
             await MainActor.run(body: { [weak self] in
                 self?.coordinator?.coordinateMain()
             })

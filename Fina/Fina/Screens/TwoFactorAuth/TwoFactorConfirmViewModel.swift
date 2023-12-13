@@ -15,9 +15,9 @@ final class TwoFactorConfirmViewModel: BaseLoadingViewModel {
     let isValidInput = BehaviorRelay<Bool>(value: false)
     let biometricTypeRelay = BehaviorRelay<LAContext.BiometricType?>(value: nil)
     
-    private let twoFactorAuthManager = ManagerFactory.shared.twoFactorAuthManager
-    private let userManager = ManagerFactory.shared.userManager
-    private let authManager = ManagerFactory.shared.authManager
+    private let twoFactorAuthManager = DefaultManagerFactory.shared.twoFactorAuthManager
+    private let userManager = DefaultManagerFactory.shared.userManager
+    private let authManager = DefaultManagerFactory.shared.authManager
     
     private var codePassword: String?
     

@@ -14,7 +14,20 @@ typealias BankAccountClosure = (BankAccount?) -> Void
 typealias BalanceClosure = (Double?, Currency?) -> Void
 typealias StringClosure = (String?) -> Void
 
-final class BankAccountsManager: BaseManager {
+protocol BankAccountsManager: AnyObject {
+    var userBankAccounts: BehaviorRelay<[BankAccount]> { get }
+    
+    func fetchBalance(for uid: String, _ completion: @escaping BalanceClosure)
+    func observeBalance(for uid: String, _ completion: @escaping BalanceClosure)
+    func fetchBankAccount(by cardNumber: String, _ completion: @escaping BankAccountClosure)
+    func fetchBankAccount(_ uid: String, _ completion: @escaping BankAccountClosure)
+    func observeBankAccount(_ uid: String, _ completion: @escaping BankAccountClosure)
+    func createBankAccount(_ newAccount: BankAccount, _ completion: @escaping StringClosure)
+    func updateBankAccount(_ updatedAccount: BankAccount, _ completion: @escaping BoolClosure)
+    func deleteBankAccount(_ uid: String, _ completion: @escaping BoolClosure)
+}
+
+final class FirebaseBankAccountsManager: BaseManager, BankAccountsManager {
     
     let userBankAccounts = BehaviorRelay<[BankAccount]>(value: [])
     
@@ -89,7 +102,7 @@ final class BankAccountsManager: BaseManager {
     }
 }
 
-private extension BankAccountsManager {
+private extension FirebaseBankAccountsManager {
     
     private func observeUserBankAccounts(_ uid: String) {
         firestore.collection(BankAccount.collection()).whereField("ownerId", isEqualTo: uid).addSnapshotListener { [weak self] snapshot, error in

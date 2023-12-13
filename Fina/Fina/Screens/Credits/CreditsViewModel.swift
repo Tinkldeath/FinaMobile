@@ -13,9 +13,12 @@ final class CreditsViewModel {
     
     let creditsRelay = BehaviorRelay<[Credit]>(value: [])
     
-    private let creditsManager = ManagerFactory.shared.creditsManager
-    private let transactionEngine = ManagerFactory.shared.transactionEngine
+    let creditsManager: CreditsManager
     private let disposeBag = DisposeBag()
+    
+    init(factory: ManagerFactory) {
+        self.creditsManager = factory.creditsManager
+    }
     
     func fetch() {
         creditsManager.userCreditsRelay.asDriver().drive(onNext: { [weak self] credits in

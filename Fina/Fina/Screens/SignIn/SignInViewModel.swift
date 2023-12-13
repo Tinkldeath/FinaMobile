@@ -15,7 +15,11 @@ final class SignInViewModel: BaseLoadingViewModel {
     
     private var input: Input?
     
-    private let authManager = ManagerFactory.shared.authManager
+    let authManager: AuthManager
+    
+    init(factory: ManagerFactory) {
+        self.authManager = factory.authManager
+    }
     
     func signIn() {
         guard let input = input else { return }

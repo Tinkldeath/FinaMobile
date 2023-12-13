@@ -12,7 +12,16 @@ import RxRelay
 
 typealias NotificationCompletionHandler = (Notification?) -> Void
 
-final class NotificationsManager: BaseManager {
+protocol NotificationsManager: AnyObject {
+    var userNotifiactionsRelay: BehaviorRelay<[Notification]> { get }
+    
+    func createNotification(_ newNotification: Notification, _ completion: @escaping StringClosure)
+    func fetchNotification(_ uid: String, _ completion: @escaping NotificationCompletionHandler)
+    func updateNotification(_ updateNotification: Notification, _ completion: BoolClosure?)
+    func deleteNotification(_ uid: String, _ completion: BoolClosure?)
+}
+
+final class FirebaseNotificationsManager: BaseManager, NotificationsManager {
 
     let userNotifiactionsRelay = BehaviorRelay<[Notification]>(value: [])
     
@@ -57,7 +66,7 @@ final class NotificationsManager: BaseManager {
     
 }
 
-private extension NotificationsManager {
+private extension FirebaseNotificationsManager {
     
     private func fetchUserNotificationsAsync(_ uid: String) async -> [Notification] {
         guard let snapshot = try? await firestore.collection(Notification.collection()).whereField("recieverId", isEqualTo: uid).getDocuments() else { return [] }

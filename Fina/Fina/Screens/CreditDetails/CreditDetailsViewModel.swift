@@ -14,16 +14,20 @@ final class CreditDetailsViewModel: BaseLoadingViewModel {
     let scheduleRelay = BehaviorRelay<[CreditSchedule]>(value: [])
     let bankAccountRelay = BehaviorRelay<String>(value: "")
     
-    private let creditsManager = ManagerFactory.shared.creditsManager
-    private let scheduleManager = ManagerFactory.shared.creditScheduleManager
-    private let transactionEngine = ManagerFactory.shared.transactionEngine
-    private let bankAccountManager = ManagerFactory.shared.bankAccountsManager
+    let creditsManager: CreditsManager
+    let scheduleManager: CreditScheduleManager
+    let transactionEngine: TransactionEngine
+    let bankAccountManager: BankAccountsManager
     
     private var credit: Credit
     
-    init(credit: Credit) {
+    init(credit: Credit, factory: ManagerFactory) {
         self.creditRelay = BehaviorRelay(value: credit)
         self.credit = credit
+        self.creditsManager = factory.creditsManager
+        self.scheduleManager = factory.creditScheduleManager
+        self.transactionEngine = factory.transactionEngine
+        self.bankAccountManager = factory.bankAccountsManager
     }
     
     func fetch() {

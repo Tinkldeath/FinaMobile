@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		3200AFA72B276351001157BF /* CreditSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3200AFA62B276351001157BF /* CreditSchedule.swift */; };
-		3200AFA92B276792001157BF /* CreditScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3200AFA82B276792001157BF /* CreditScheduleManager.swift */; };
+		3200AFA92B276792001157BF /* FirebaseCreditScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3200AFA82B276792001157BF /* FirebaseCreditScheduleManager.swift */; };
 		3200AFAB2B27759E001157BF /* AddCreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3200AFAA2B27759E001157BF /* AddCreditViewController.swift */; };
 		3200AFAD2B277852001157BF /* AddCreditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3200AFAC2B277852001157BF /* AddCreditViewModel.swift */; };
 		321696F42B27541D0061C2F9 /* CreditsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321696F32B27541D0061C2F9 /* CreditsViewModel.swift */; };
-		321696F62B2754A80061C2F9 /* CreditsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321696F52B2754A80061C2F9 /* CreditsManager.swift */; };
+		321696F62B2754A80061C2F9 /* FirebaseCreditsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321696F52B2754A80061C2F9 /* FirebaseCreditsManager.swift */; };
 		3217A6D02B261FF900379E07 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3217A6CF2B261FF900379E07 /* CardsViewController.swift */; };
 		323584952B28D10000226967 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323584942B28D10000226967 /* Notification.swift */; };
-		323584972B28D3DD00226967 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323584962B28D3DD00226967 /* NotificationsManager.swift */; };
+		323584972B28D3DD00226967 /* FirebaseNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323584962B28D3DD00226967 /* FirebaseNotificationsManager.swift */; };
 		3235849B2B28E81A00226967 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323584992B28E81A00226967 /* TextViewController.swift */; };
 		3235849C2B28E81A00226967 /* TextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3235849A2B28E81A00226967 /* TextViewModel.swift */; };
 		3235849E2B290DA500226967 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3235849D2B290DA500226967 /* BaseTabBarController.swift */; };
@@ -37,7 +37,7 @@
 		3236029C2B27315E0066C149 /* TwoFactorConfirmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236029B2B27315E0066C149 /* TwoFactorConfirmViewModel.swift */; };
 		3236029E2B2732930066C149 /* TwoFactorConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236029D2B2732930066C149 /* TwoFactorConfirmViewController.swift */; };
 		3238B4F02B253703001EC3D8 /* Ciper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3238B4EF2B253703001EC3D8 /* Ciper.swift */; };
-		3238B4F22B25392B001EC3D8 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3238B4F12B25392B001EC3D8 /* UserManager.swift */; };
+		3238B4F22B25392B001EC3D8 /* FirebaseUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3238B4F12B25392B001EC3D8 /* FirebaseUserManager.swift */; };
 		3238B4F42B253BC7001EC3D8 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3238B4F32B253BC7001EC3D8 /* SignInViewModel.swift */; };
 		3238B4F72B253CA0001EC3D8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3238B4F62B253CA0001EC3D8 /* SignUpViewController.swift */; };
 		3238B4F92B253CAD001EC3D8 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3238B4F82B253CAD001EC3D8 /* SignUpViewModel.swift */; };
@@ -47,11 +47,14 @@
 		3238B5032B254CCC001EC3D8 /* PrepareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3238B5022B254CCC001EC3D8 /* PrepareViewController.swift */; };
 		325A5CD52B26E07400C1ABB7 /* CardDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325A5CD42B26E07400C1ABB7 /* CardDetailsViewController.swift */; };
 		325A5CD72B26E08E00C1ABB7 /* CardDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325A5CD62B26E08E00C1ABB7 /* CardDetailsViewModel.swift */; };
-		325A5CD92B26E78E00C1ABB7 /* TransactionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325A5CD82B26E78E00C1ABB7 /* TransactionsManager.swift */; };
+		325A5CD92B26E78E00C1ABB7 /* FirebaseTransactionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325A5CD82B26E78E00C1ABB7 /* FirebaseTransactionsManager.swift */; };
 		325A5CDB2B26E80A00C1ABB7 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325A5CDA2B26E80A00C1ABB7 /* Transaction.swift */; };
 		325A5CDD2B26F0A600C1ABB7 /* TransactionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325A5CDC2B26F0A600C1ABB7 /* TransactionEngine.swift */; };
+		3267B87F2B2987C000668527 /* Mockups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267B87E2B2987C000668527 /* Mockups.swift */; };
+		3267B8872B2997F600668527 /* TransactionEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267B8862B2997F600668527 /* TransactionEngineTests.swift */; };
+		3267B8892B29A90D00668527 /* ViewModelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267B8882B29A90D00668527 /* ViewModelsTests.swift */; };
 		3267FEE42B2532BF00B9E4B0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267FEE32B2532BF00B9E4B0 /* Constants.swift */; };
-		327FD1942B29475A007F4E7C /* MediaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327FD1932B29475A007F4E7C /* MediaManager.swift */; };
+		327FD1942B29475A007F4E7C /* FirebaseMediaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327FD1932B29475A007F4E7C /* FirebaseMediaManager.swift */; };
 		32C90DCB2B267D380025C5B4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DCA2B267D380025C5B4 /* ProfileViewController.swift */; };
 		32C90DCD2B267D590025C5B4 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DCC2B267D590025C5B4 /* ProfileViewModel.swift */; };
 		32C90DD12B2680590025C5B4 /* ProfileAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DD02B2680590025C5B4 /* ProfileAction.swift */; };
@@ -59,13 +62,14 @@
 		32C90DD62B2689FB0025C5B4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DD52B2689FB0025C5B4 /* HomeViewController.swift */; };
 		32C90DD82B268A580025C5B4 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DD72B268A580025C5B4 /* HomeViewModel.swift */; };
 		32C90DDA2B2698170025C5B4 /* CardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DD92B2698170025C5B4 /* CardsViewModel.swift */; };
-		32C90DDC2B2698750025C5B4 /* CardsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DDB2B2698750025C5B4 /* CardsManager.swift */; };
-		32C90DDE2B2698840025C5B4 /* BankAccountsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DDD2B2698840025C5B4 /* BankAccountsManager.swift */; };
+		32C90DDC2B2698750025C5B4 /* FirebaseCardsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DDB2B2698750025C5B4 /* FirebaseCardsManager.swift */; };
+		32C90DDE2B2698840025C5B4 /* FirebaseBankAccountsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DDD2B2698840025C5B4 /* FirebaseBankAccountsManager.swift */; };
 		32C90DE02B26991B0025C5B4 /* BankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DDF2B26991B0025C5B4 /* BankAccount.swift */; };
 		32C90DE22B269CFA0025C5B4 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DE12B269CFA0025C5B4 /* Card.swift */; };
 		32C90DE52B26B0090025C5B4 /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DE42B26B0090025C5B4 /* AddCardViewController.swift */; };
 		32C90DE72B26B0C40025C5B4 /* AddCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DE62B26B0C40025C5B4 /* AddCardViewModel.swift */; };
 		32C90DE92B26BF4C0025C5B4 /* Extension + Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C90DE82B26BF4C0025C5B4 /* Extension + Date.swift */; };
+		32D8E8572B295CD7007552A6 /* CurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D8E8562B295CD7007552A6 /* CurrencyTests.swift */; };
 		32E727AD2B2528990074DAB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E727AC2B2528990074DAB4 /* AppDelegate.swift */; };
 		32E727AF2B2528990074DAB4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E727AE2B2528990074DAB4 /* SceneDelegate.swift */; };
 		32E727B42B2528990074DAB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E727B22B2528990074DAB4 /* Main.storyboard */; };
@@ -83,25 +87,36 @@
 		32E727DE2B252CAA0074DAB4 /* BaseLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E727D92B252CAA0074DAB4 /* BaseLoadingView.swift */; };
 		32E727DF2B252CAA0074DAB4 /* BaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E727DA2B252CAA0074DAB4 /* BaseManager.swift */; };
 		32E727E12B252CAA0074DAB4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E727DC2B252CAA0074DAB4 /* BaseViewController.swift */; };
-		32EFE7542B252EB700D5103D /* ManagerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EFE7532B252EB700D5103D /* ManagerFactory.swift */; };
-		32EFE7562B252EDD00D5103D /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EFE7552B252EDD00D5103D /* AuthManager.swift */; };
+		32EFE7542B252EB700D5103D /* DefaultManagerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EFE7532B252EB700D5103D /* DefaultManagerFactory.swift */; };
+		32EFE7562B252EDD00D5103D /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EFE7552B252EDD00D5103D /* FirebaseAuthManager.swift */; };
 		32EFE7592B252F8E00D5103D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EFE7582B252F8E00D5103D /* User.swift */; };
 		32EFE75B2B252FBB00D5103D /* FirebaseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EFE75A2B252FBB00D5103D /* FirebaseEntity.swift */; };
-		32EFE75D2B2530A800D5103D /* TwoFactorAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EFE75C2B2530A800D5103D /* TwoFactorAuthManager.swift */; };
+		32EFE75D2B2530A800D5103D /* FirebaseTwoFactorAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EFE75C2B2530A800D5103D /* FirebaseTwoFactorAuthManager.swift */; };
+		403AC5144606D0AAA0CFA832 /* Pods_Fina_FinaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BD59140ADBD3EA70CEEEDD /* Pods_Fina_FinaTests.framework */; };
 		8F2AF49BCAAF54542743552F /* Pods_Fina.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF62C50FFF43A073158A4374 /* Pods_Fina.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		32D8E8582B295CD7007552A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 32E727A12B2528990074DAB4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 32E727A82B2528990074DAB4;
+			remoteInfo = Fina;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0E2BE9FB88ADA484D64D97A4 /* Pods-Fina.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fina.release.xcconfig"; path = "Target Support Files/Pods-Fina/Pods-Fina.release.xcconfig"; sourceTree = "<group>"; };
 		3200AFA62B276351001157BF /* CreditSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditSchedule.swift; sourceTree = "<group>"; };
-		3200AFA82B276792001157BF /* CreditScheduleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScheduleManager.swift; sourceTree = "<group>"; };
+		3200AFA82B276792001157BF /* FirebaseCreditScheduleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCreditScheduleManager.swift; sourceTree = "<group>"; };
 		3200AFAA2B27759E001157BF /* AddCreditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCreditViewController.swift; sourceTree = "<group>"; };
 		3200AFAC2B277852001157BF /* AddCreditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCreditViewModel.swift; sourceTree = "<group>"; };
 		321696F32B27541D0061C2F9 /* CreditsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewModel.swift; sourceTree = "<group>"; };
-		321696F52B2754A80061C2F9 /* CreditsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsManager.swift; sourceTree = "<group>"; };
+		321696F52B2754A80061C2F9 /* FirebaseCreditsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCreditsManager.swift; sourceTree = "<group>"; };
 		3217A6CF2B261FF900379E07 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 		323584942B28D10000226967 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
-		323584962B28D3DD00226967 /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
+		323584962B28D3DD00226967 /* FirebaseNotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseNotificationsManager.swift; sourceTree = "<group>"; };
 		323584992B28E81A00226967 /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		3235849A2B28E81A00226967 /* TextViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewModel.swift; sourceTree = "<group>"; };
 		3235849D2B290DA500226967 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
@@ -123,7 +138,7 @@
 		3236029B2B27315E0066C149 /* TwoFactorConfirmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoFactorConfirmViewModel.swift; sourceTree = "<group>"; };
 		3236029D2B2732930066C149 /* TwoFactorConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoFactorConfirmViewController.swift; sourceTree = "<group>"; };
 		3238B4EF2B253703001EC3D8 /* Ciper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ciper.swift; sourceTree = "<group>"; };
-		3238B4F12B25392B001EC3D8 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		3238B4F12B25392B001EC3D8 /* FirebaseUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserManager.swift; sourceTree = "<group>"; };
 		3238B4F32B253BC7001EC3D8 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		3238B4F62B253CA0001EC3D8 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3238B4F82B253CAD001EC3D8 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -133,11 +148,14 @@
 		3238B5022B254CCC001EC3D8 /* PrepareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareViewController.swift; sourceTree = "<group>"; };
 		325A5CD42B26E07400C1ABB7 /* CardDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsViewController.swift; sourceTree = "<group>"; };
 		325A5CD62B26E08E00C1ABB7 /* CardDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsViewModel.swift; sourceTree = "<group>"; };
-		325A5CD82B26E78E00C1ABB7 /* TransactionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsManager.swift; sourceTree = "<group>"; };
+		325A5CD82B26E78E00C1ABB7 /* FirebaseTransactionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseTransactionsManager.swift; sourceTree = "<group>"; };
 		325A5CDA2B26E80A00C1ABB7 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		325A5CDC2B26F0A600C1ABB7 /* TransactionEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionEngine.swift; sourceTree = "<group>"; };
+		3267B87E2B2987C000668527 /* Mockups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockups.swift; sourceTree = "<group>"; };
+		3267B8862B2997F600668527 /* TransactionEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionEngineTests.swift; sourceTree = "<group>"; };
+		3267B8882B29A90D00668527 /* ViewModelsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelsTests.swift; sourceTree = "<group>"; };
 		3267FEE32B2532BF00B9E4B0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		327FD1932B29475A007F4E7C /* MediaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaManager.swift; sourceTree = "<group>"; };
+		327FD1932B29475A007F4E7C /* FirebaseMediaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMediaManager.swift; sourceTree = "<group>"; };
 		32C90DCA2B267D380025C5B4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		32C90DCC2B267D590025C5B4 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		32C90DD02B2680590025C5B4 /* ProfileAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAction.swift; sourceTree = "<group>"; };
@@ -145,13 +163,15 @@
 		32C90DD52B2689FB0025C5B4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		32C90DD72B268A580025C5B4 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		32C90DD92B2698170025C5B4 /* CardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewModel.swift; sourceTree = "<group>"; };
-		32C90DDB2B2698750025C5B4 /* CardsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsManager.swift; sourceTree = "<group>"; };
-		32C90DDD2B2698840025C5B4 /* BankAccountsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountsManager.swift; sourceTree = "<group>"; };
+		32C90DDB2B2698750025C5B4 /* FirebaseCardsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCardsManager.swift; sourceTree = "<group>"; };
+		32C90DDD2B2698840025C5B4 /* FirebaseBankAccountsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseBankAccountsManager.swift; sourceTree = "<group>"; };
 		32C90DDF2B26991B0025C5B4 /* BankAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccount.swift; sourceTree = "<group>"; };
 		32C90DE12B269CFA0025C5B4 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		32C90DE42B26B0090025C5B4 /* AddCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
 		32C90DE62B26B0C40025C5B4 /* AddCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewModel.swift; sourceTree = "<group>"; };
 		32C90DE82B26BF4C0025C5B4 /* Extension + Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Date.swift"; sourceTree = "<group>"; };
+		32D8E8542B295CD7007552A6 /* FinaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		32D8E8562B295CD7007552A6 /* CurrencyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTests.swift; sourceTree = "<group>"; };
 		32E727A92B2528990074DAB4 /* Fina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32E727AC2B2528990074DAB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32E727AE2B2528990074DAB4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -171,16 +191,27 @@
 		32E727D92B252CAA0074DAB4 /* BaseLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseLoadingView.swift; sourceTree = "<group>"; };
 		32E727DA2B252CAA0074DAB4 /* BaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseManager.swift; sourceTree = "<group>"; };
 		32E727DC2B252CAA0074DAB4 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		32EFE7532B252EB700D5103D /* ManagerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerFactory.swift; sourceTree = "<group>"; };
-		32EFE7552B252EDD00D5103D /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		32EFE7532B252EB700D5103D /* DefaultManagerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultManagerFactory.swift; sourceTree = "<group>"; };
+		32EFE7552B252EDD00D5103D /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		32EFE7582B252F8E00D5103D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		32EFE75A2B252FBB00D5103D /* FirebaseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseEntity.swift; sourceTree = "<group>"; };
-		32EFE75C2B2530A800D5103D /* TwoFactorAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoFactorAuthManager.swift; sourceTree = "<group>"; };
+		32EFE75C2B2530A800D5103D /* FirebaseTwoFactorAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseTwoFactorAuthManager.swift; sourceTree = "<group>"; };
 		39AB554F88427CDED0D27445 /* Pods-Fina.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fina.debug.xcconfig"; path = "Target Support Files/Pods-Fina/Pods-Fina.debug.xcconfig"; sourceTree = "<group>"; };
+		49BD59140ADBD3EA70CEEEDD /* Pods_Fina_FinaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fina_FinaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5502D172754062A0531D1DC /* Pods-Fina-FinaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fina-FinaTests.release.xcconfig"; path = "Target Support Files/Pods-Fina-FinaTests/Pods-Fina-FinaTests.release.xcconfig"; sourceTree = "<group>"; };
+		D6B0B2E3B5D0B5E5D32932AB /* Pods-Fina-FinaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fina-FinaTests.debug.xcconfig"; path = "Target Support Files/Pods-Fina-FinaTests/Pods-Fina-FinaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EF62C50FFF43A073158A4374 /* Pods_Fina.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fina.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		32D8E8512B295CD7007552A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				403AC5144606D0AAA0CFA832 /* Pods_Fina_FinaTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		32E727A62B2528990074DAB4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -196,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				EF62C50FFF43A073158A4374 /* Pods_Fina.framework */,
+				49BD59140ADBD3EA70CEEEDD /* Pods_Fina_FinaTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -205,6 +237,8 @@
 			children = (
 				39AB554F88427CDED0D27445 /* Pods-Fina.debug.xcconfig */,
 				0E2BE9FB88ADA484D64D97A4 /* Pods-Fina.release.xcconfig */,
+				D6B0B2E3B5D0B5E5D32932AB /* Pods-Fina-FinaTests.debug.xcconfig */,
+				C5502D172754062A0531D1DC /* Pods-Fina-FinaTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -348,10 +382,22 @@
 			path = AddCard;
 			sourceTree = "<group>";
 		};
+		32D8E8552B295CD7007552A6 /* FinaTests */ = {
+			isa = PBXGroup;
+			children = (
+				3267B87E2B2987C000668527 /* Mockups.swift */,
+				3267B8862B2997F600668527 /* TransactionEngineTests.swift */,
+				32D8E8562B295CD7007552A6 /* CurrencyTests.swift */,
+				3267B8882B29A90D00668527 /* ViewModelsTests.swift */,
+			);
+			path = FinaTests;
+			sourceTree = "<group>";
+		};
 		32E727A02B2528990074DAB4 = {
 			isa = PBXGroup;
 			children = (
 				32E727AB2B2528990074DAB4 /* Fina */,
+				32D8E8552B295CD7007552A6 /* FinaTests */,
 				32E727AA2B2528990074DAB4 /* Products */,
 				248CC4385AB3F2B5F83FAAAB /* Pods */,
 				111E8442CED5CB1C9E4F1A69 /* Frameworks */,
@@ -362,6 +408,7 @@
 			isa = PBXGroup;
 			children = (
 				32E727A92B2528990074DAB4 /* Fina.app */,
+				32D8E8542B295CD7007552A6 /* FinaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -476,18 +523,18 @@
 		32EFE7522B252EA700D5103D /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				32EFE7532B252EB700D5103D /* ManagerFactory.swift */,
-				32EFE7552B252EDD00D5103D /* AuthManager.swift */,
-				32EFE75C2B2530A800D5103D /* TwoFactorAuthManager.swift */,
-				3238B4F12B25392B001EC3D8 /* UserManager.swift */,
-				32C90DDB2B2698750025C5B4 /* CardsManager.swift */,
-				32C90DDD2B2698840025C5B4 /* BankAccountsManager.swift */,
-				325A5CD82B26E78E00C1ABB7 /* TransactionsManager.swift */,
+				32EFE7532B252EB700D5103D /* DefaultManagerFactory.swift */,
+				32EFE7552B252EDD00D5103D /* FirebaseAuthManager.swift */,
+				32EFE75C2B2530A800D5103D /* FirebaseTwoFactorAuthManager.swift */,
+				3238B4F12B25392B001EC3D8 /* FirebaseUserManager.swift */,
+				32C90DDB2B2698750025C5B4 /* FirebaseCardsManager.swift */,
+				32C90DDD2B2698840025C5B4 /* FirebaseBankAccountsManager.swift */,
+				325A5CD82B26E78E00C1ABB7 /* FirebaseTransactionsManager.swift */,
 				325A5CDC2B26F0A600C1ABB7 /* TransactionEngine.swift */,
-				321696F52B2754A80061C2F9 /* CreditsManager.swift */,
-				3200AFA82B276792001157BF /* CreditScheduleManager.swift */,
-				323584962B28D3DD00226967 /* NotificationsManager.swift */,
-				327FD1932B29475A007F4E7C /* MediaManager.swift */,
+				321696F52B2754A80061C2F9 /* FirebaseCreditsManager.swift */,
+				3200AFA82B276792001157BF /* FirebaseCreditScheduleManager.swift */,
+				323584962B28D3DD00226967 /* FirebaseNotificationsManager.swift */,
+				327FD1932B29475A007F4E7C /* FirebaseMediaManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -511,6 +558,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		32D8E8532B295CD7007552A6 /* FinaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32D8E85C2B295CD7007552A6 /* Build configuration list for PBXNativeTarget "FinaTests" */;
+			buildPhases = (
+				4829799C716C493F378719F9 /* [CP] Check Pods Manifest.lock */,
+				32D8E8502B295CD7007552A6 /* Sources */,
+				32D8E8512B295CD7007552A6 /* Frameworks */,
+				32D8E8522B295CD7007552A6 /* Resources */,
+				1DE3DC4DC20DCB94CCCBBFF0 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				32D8E8592B295CD7007552A6 /* PBXTargetDependency */,
+			);
+			name = FinaTests;
+			productName = FinaTests;
+			productReference = 32D8E8542B295CD7007552A6 /* FinaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		32E727A82B2528990074DAB4 /* Fina */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 32E727BD2B25289B0074DAB4 /* Build configuration list for PBXNativeTarget "Fina" */;
@@ -540,6 +607,10 @@
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					32D8E8532B295CD7007552A6 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 32E727A82B2528990074DAB4;
+					};
 					32E727A82B2528990074DAB4 = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -559,11 +630,19 @@
 			projectRoot = "";
 			targets = (
 				32E727A82B2528990074DAB4 /* Fina */,
+				32D8E8532B295CD7007552A6 /* FinaTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		32D8E8522B295CD7007552A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		32E727A72B2528990074DAB4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -579,6 +658,45 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1DE3DC4DC20DCB94CCCBBFF0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fina-FinaTests/Pods-Fina-FinaTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fina-FinaTests/Pods-Fina-FinaTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fina-FinaTests/Pods-Fina-FinaTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4829799C716C493F378719F9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fina-FinaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6B837231541D454B2AE7A6CE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -621,6 +739,17 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		32D8E8502B295CD7007552A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3267B8872B2997F600668527 /* TransactionEngineTests.swift in Sources */,
+				3267B87F2B2987C000668527 /* Mockups.swift in Sources */,
+				3267B8892B29A90D00668527 /* ViewModelsTests.swift in Sources */,
+				32D8E8572B295CD7007552A6 /* CurrencyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		32E727A52B2528990074DAB4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -631,29 +760,29 @@
 				3238B4FB2B253DA8001EC3D8 /* BaseLoadingViewModel.swift in Sources */,
 				323584A12B2916BD00226967 /* CreditDetailsViewController.swift in Sources */,
 				323584A62B29263800226967 /* NotificationsViewController.swift in Sources */,
-				32EFE7562B252EDD00D5103D /* AuthManager.swift in Sources */,
+				32EFE7562B252EDD00D5103D /* FirebaseAuthManager.swift in Sources */,
 				32C90DE22B269CFA0025C5B4 /* Card.swift in Sources */,
 				3200AFA72B276351001157BF /* CreditSchedule.swift in Sources */,
 				32E727C42B25290C0074DAB4 /* AppCoordinator.swift in Sources */,
 				32E727AD2B2528990074DAB4 /* AppDelegate.swift in Sources */,
-				321696F62B2754A80061C2F9 /* CreditsManager.swift in Sources */,
-				323584972B28D3DD00226967 /* NotificationsManager.swift in Sources */,
+				321696F62B2754A80061C2F9 /* FirebaseCreditsManager.swift in Sources */,
+				323584972B28D3DD00226967 /* FirebaseNotificationsManager.swift in Sources */,
 				323602912B271D690066C149 /* CardInfo.swift in Sources */,
 				32E727CF2B2529A80074DAB4 /* Extension + String.swift in Sources */,
 				32E727D12B2529A80074DAB4 /* Extension + UIView.swift in Sources */,
 				3200AFAD2B277852001157BF /* AddCreditViewModel.swift in Sources */,
-				3200AFA92B276792001157BF /* CreditScheduleManager.swift in Sources */,
+				3200AFA92B276792001157BF /* FirebaseCreditScheduleManager.swift in Sources */,
 				3217A6D02B261FF900379E07 /* CardsViewController.swift in Sources */,
 				32E727E12B252CAA0074DAB4 /* BaseViewController.swift in Sources */,
 				3236029A2B27303A0066C149 /* CreditsViewController.swift in Sources */,
 				32E727D62B252C930074DAB4 /* SignInViewController.swift in Sources */,
-				325A5CD92B26E78E00C1ABB7 /* TransactionsManager.swift in Sources */,
+				325A5CD92B26E78E00C1ABB7 /* FirebaseTransactionsManager.swift in Sources */,
 				3238B4F42B253BC7001EC3D8 /* SignInViewModel.swift in Sources */,
 				325A5CDB2B26E80A00C1ABB7 /* Transaction.swift in Sources */,
 				3238B4FE2B2548EA001EC3D8 /* TwoFactorAuthViewController.swift in Sources */,
 				32C90DCB2B267D380025C5B4 /* ProfileViewController.swift in Sources */,
 				323584A32B29193E00226967 /* CreditDetailsViewModel.swift in Sources */,
-				327FD1942B29475A007F4E7C /* MediaManager.swift in Sources */,
+				327FD1942B29475A007F4E7C /* FirebaseMediaManager.swift in Sources */,
 				3235849B2B28E81A00226967 /* TextViewController.swift in Sources */,
 				32EFE7592B252F8E00D5103D /* User.swift in Sources */,
 				32C90DE02B26991B0025C5B4 /* BankAccount.swift in Sources */,
@@ -661,16 +790,16 @@
 				32E727DF2B252CAA0074DAB4 /* BaseManager.swift in Sources */,
 				325A5CD52B26E07400C1ABB7 /* CardDetailsViewController.swift in Sources */,
 				3235849E2B290DA500226967 /* BaseTabBarController.swift in Sources */,
-				32EFE75D2B2530A800D5103D /* TwoFactorAuthManager.swift in Sources */,
+				32EFE75D2B2530A800D5103D /* FirebaseTwoFactorAuthManager.swift in Sources */,
 				32C90DD82B268A580025C5B4 /* HomeViewModel.swift in Sources */,
 				32C90DE92B26BF4C0025C5B4 /* Extension + Date.swift in Sources */,
 				3238B4F92B253CAD001EC3D8 /* SignUpViewModel.swift in Sources */,
 				3236029E2B2732930066C149 /* TwoFactorConfirmViewController.swift in Sources */,
 				32E727CE2B2529A80074DAB4 /* Extension + Collection.swift in Sources */,
-				32EFE7542B252EB700D5103D /* ManagerFactory.swift in Sources */,
+				32EFE7542B252EB700D5103D /* DefaultManagerFactory.swift in Sources */,
 				323584AA2B29295F00226967 /* Extension + UIBarButtonItem.swift in Sources */,
 				3236028F2B271D580066C149 /* CardInfoViewModel.swift in Sources */,
-				32C90DDC2B2698750025C5B4 /* CardsManager.swift in Sources */,
+				32C90DDC2B2698750025C5B4 /* FirebaseCardsManager.swift in Sources */,
 				323584952B28D10000226967 /* Notification.swift in Sources */,
 				32C90DE52B26B0090025C5B4 /* AddCardViewController.swift in Sources */,
 				32C90DD32B2688F00025C5B4 /* Currency.swift in Sources */,
@@ -685,7 +814,7 @@
 				321696F42B27541D0061C2F9 /* CreditsViewModel.swift in Sources */,
 				3235849C2B28E81A00226967 /* TextViewModel.swift in Sources */,
 				323584AF2B29329B00226967 /* ChartsViewModel.swift in Sources */,
-				32C90DDE2B2698840025C5B4 /* BankAccountsManager.swift in Sources */,
+				32C90DDE2B2698840025C5B4 /* FirebaseBankAccountsManager.swift in Sources */,
 				323584AD2B29321000226967 /* ChartsViewController.swift in Sources */,
 				3236028A2B2707C20066C149 /* Extension + Double.swift in Sources */,
 				3238B5032B254CCC001EC3D8 /* PrepareViewController.swift in Sources */,
@@ -698,13 +827,21 @@
 				323602932B272B9A0066C149 /* Credit.swift in Sources */,
 				32C90DD62B2689FB0025C5B4 /* HomeViewController.swift in Sources */,
 				3238B4F02B253703001EC3D8 /* Ciper.swift in Sources */,
-				3238B4F22B25392B001EC3D8 /* UserManager.swift in Sources */,
+				3238B4F22B25392B001EC3D8 /* FirebaseUserManager.swift in Sources */,
 				323584A82B29264A00226967 /* NotificationsViewModel.swift in Sources */,
 				3267FEE42B2532BF00B9E4B0 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		32D8E8592B295CD7007552A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 32E727A82B2528990074DAB4 /* Fina */;
+			targetProxy = 32D8E8582B295CD7007552A6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		32E727B22B2528990074DAB4 /* Main.storyboard */ = {
@@ -726,6 +863,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		32D8E85A2B295CD7007552A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6B0B2E3B5D0B5E5D32932AB /* Pods-Fina-FinaTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tinkldeath.FinaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fina.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fina";
+			};
+			name = Debug;
+		};
+		32D8E85B2B295CD7007552A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5502D172754062A0531D1DC /* Pods-Fina-FinaTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tinkldeath.FinaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fina.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fina";
+			};
+			name = Release;
+		};
 		32E727BB2B25289B0074DAB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -913,6 +1090,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		32D8E85C2B295CD7007552A6 /* Build configuration list for PBXNativeTarget "FinaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32D8E85A2B295CD7007552A6 /* Debug */,
+				32D8E85B2B295CD7007552A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		32E727A42B2528990074DAB4 /* Build configuration list for PBXProject "Fina" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

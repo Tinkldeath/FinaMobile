@@ -11,7 +11,12 @@ import UIKit
 
 typealias ImageCompletionHandler = (UIImage?) -> Void
 
-final class MediaManager {
+protocol MediaManager: AnyObject {
+    func fetchImage(for uid: String, _ completion: @escaping ImageCompletionHandler)
+    func setImage(for uid: String, _ image: UIImage, _ completion: @escaping ImageCompletionHandler)
+}
+
+final class FirebaseMediaManager: MediaManager {
     
     private let stroage = Storage.storage().reference()
     

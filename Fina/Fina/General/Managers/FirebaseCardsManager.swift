@@ -12,7 +12,16 @@ import FirebaseAuth
 
 typealias CardClosure = (Card?) -> Void
 
-final class CardsManager: BaseManager {
+protocol CardsManager: AnyObject {
+    var userCards: BehaviorRelay<[Card]> { get }
+    
+    func fechCard(_ cardNumber: String, _ completion: @escaping CardClosure)
+    func createCard(_ newCard: Card, _ completion: @escaping BoolClosure)
+    func updateCard(_ updatedCard: Card, _ completion: @escaping BoolClosure)
+    func deleteCard(_ uid: String, _ completion: @escaping BoolClosure)
+}
+
+final class FirebaseCardsManager: BaseManager, CardsManager {
     
     let userCards = BehaviorRelay<[Card]>(value: [])
     
@@ -56,7 +65,7 @@ final class CardsManager: BaseManager {
     }
 }
 
-private extension CardsManager {
+private extension FirebaseCardsManager {
     
     private func fetchUserCardsAsync(_ uid: String) async -> [Card] {
         guard let data = try? await firestore.collection(Card.collection()).whereField("ownerId", isEqualTo: uid).getDocuments() else { return [] }

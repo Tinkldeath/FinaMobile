@@ -11,7 +11,18 @@ import SwiftKeychainWrapper
 
 typealias BoolClosure = (Bool) -> Void
 
-final class TwoFactorAuthManager {
+protocol TwoFactorAuthManager: AnyObject {
+    var isBiometricEnabled: Bool { get }
+    var enabledBiometricType: LAContext.BiometricType { get }
+    
+    func isBiometricFastVerificationEnabled(for userId: String) -> Bool
+    func setupBiometricEnabled(for userId: String, _ enabled: Bool)
+    func resetBiometricAccess()
+    func authorizeBiometric(for userId: String, _ completion: @escaping BoolClosure)
+    func authorizeWithCodePassword(required codePassword: Data, entered password: String, _ completion: @escaping BoolClosure)
+}
+
+final class FirebaseTwoFactorAuthManager: TwoFactorAuthManager {
     
     private var context: LAContext = LAContext()
     private let keychain = KeychainWrapper.standard

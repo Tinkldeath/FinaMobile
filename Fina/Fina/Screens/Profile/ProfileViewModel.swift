@@ -18,11 +18,18 @@ final class ProfileViewModel: BaseLoadingViewModel {
     let userEmailRelay = BehaviorRelay<String>(value: "")
     let actionsRelay = BehaviorRelay<[ProfileAction]>(value: ProfileAction.allCases)
     
-    private let userManager = ManagerFactory.shared.userManager
-    private let authManager = ManagerFactory.shared.authManager
-    private let creditsManager = ManagerFactory.shared.creditsManager
-    private let mediaManager = ManagerFactory.shared.mediaManager
+    let userManager: UserManager
+    let authManager: AuthManager
+    let creditsManager: CreditsManager
+    let mediaManager: MediaManager
     private let disposeBag = DisposeBag()
+    
+    init(factory: ManagerFactory) {
+        self.userManager = factory.userManager
+        self.authManager = factory.authManager
+        self.creditsManager = factory.creditsManager
+        self.mediaManager = factory.mediaManager
+    }
     
     func fetch() {
         guard let user = userManager.currentUser.value else { return }
@@ -90,7 +97,7 @@ final class ProfileViewModel: BaseLoadingViewModel {
     }
     
     func logout() {
-        authManager.logout()
+        authManager.logout(nil)
         userManager.signOut()
     }
 }

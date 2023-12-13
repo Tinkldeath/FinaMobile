@@ -14,9 +14,9 @@ final class AddCreditViewModel: BaseLoadingViewModel {
     let totalSumRelay = PublishRelay<Double>()
     let scheduleRelay = BehaviorRelay<[CreditSchedule]>(value: [])
     
-    private let userManager = ManagerFactory.shared.userManager
-    private let creditScheduleManager = ManagerFactory.shared.creditScheduleManager
-    private let transactionEngine = ManagerFactory.shared.transactionEngine
+    let userManager: UserManager
+    let creditScheduleManager: CreditScheduleManager
+    let transactionEngine: TransactionEngine
     
     private let calculator = CreditCalculator()
     private var input: Input?
@@ -24,8 +24,11 @@ final class AddCreditViewModel: BaseLoadingViewModel {
     
     private var bankAccount: BankAccount
     
-    init(bankAccount: BankAccount) {
+    init(bankAccount: BankAccount, factory: ManagerFactory) {
         self.bankAccount = bankAccount
+        self.userManager = factory.userManager
+        self.creditScheduleManager = factory.creditScheduleManager
+        self.transactionEngine = factory.transactionEngine
     }
     
     func didEnterInput(_ input: Input) {
@@ -41,7 +44,6 @@ final class AddCreditViewModel: BaseLoadingViewModel {
     
     func generateAgreements() -> String {
         guard let borrowerName = userManager.currentUser.value?.name, let input = input else { return "" }
-        print(borrowerName)
         return Constants.Credit.generateCreditAgreement(borrowerName, Currency.byn.stringAmount(input.sum), input.durationMonths, input.guarantorPassportId)
     }
     
@@ -51,7 +53,7 @@ final class AddCreditViewModel: BaseLoadingViewModel {
         let credit = Credit(uid: "", ownerId: bankAccount.ownerId, bankAccountId: bankAccount.uid, durationMonths: input.durationMonths, totalSum: results.totalSum, sum: input.sum, currency: .byn, paymentType: input.paymentType, percentYear: 19, hasDebt: false, isPayed: false, dateAdded: Date.now, debtDays: [], schedule: [], guarantor: Ciper.seal(input.guarantorPassportId))
         loadingRelay.accept(())
         transactionEngine.addCredit(credit: credit, schedule: schedule, to: bankAccount) { [weak self] completed in
-            self?.loadingRelay.accept(())
+            self?.endLoadingRelay.accept(())
             completion?(completed)
         }
     }
