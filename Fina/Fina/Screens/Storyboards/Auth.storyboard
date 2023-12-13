@@ -338,6 +338,76 @@
             </objects>
             <point key="canvasLocation" x="2494" y="2"/>
         </scene>
+        <!--Two Factor Confirm View Controller-->
+        <scene sceneID="mP7-il-ReX">
+            <objects>
+                <viewController storyboardIdentifier="TwoFactorConfirmViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cAP-mA-CzW" customClass="TwoFactorConfirmViewController" customModule="Fina" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z6t-OC-GKZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XEp-lO-QqO">
+                                <rect key="frame" x="309" y="601" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="EtJ-3m-the"/>
+                                    <constraint firstAttribute="height" constant="50" id="PDP-oy-l3p"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="touchid" catalog="system"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vGy-Xv-lk1">
+                                <rect key="frame" x="48" y="293.5" width="279" height="80"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="4-digit code-password..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZLx-ll-ft8">
+                                        <rect key="frame" x="0.0" y="0.0" width="279" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WlG-fy-Epr">
+                                        <rect key="frame" x="75" y="50" width="129" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6K4-DS-SJ4">
+                                                <rect key="frame" x="0.0" y="0.0" width="129" height="30"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Submit">
+                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="13"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="WlG-fy-Epr" firstAttribute="centerX" secondItem="vGy-Xv-lk1" secondAttribute="centerX" id="Mup-EV-dia"/>
+                                    <constraint firstItem="ZLx-ll-ft8" firstAttribute="centerX" secondItem="vGy-Xv-lk1" secondAttribute="centerX" id="O5e-Js-jiQ"/>
+                                    <constraint firstItem="ZLx-ll-ft8" firstAttribute="leading" secondItem="vGy-Xv-lk1" secondAttribute="leading" id="PEa-c4-hCf"/>
+                                    <constraint firstAttribute="bottom" secondItem="WlG-fy-Epr" secondAttribute="bottom" id="aZY-IX-sgG"/>
+                                    <constraint firstItem="ZLx-ll-ft8" firstAttribute="top" secondItem="vGy-Xv-lk1" secondAttribute="top" id="gCe-9g-z6K"/>
+                                    <constraint firstItem="WlG-fy-Epr" firstAttribute="leading" secondItem="vGy-Xv-lk1" secondAttribute="leading" constant="75" id="kAS-KB-D0b"/>
+                                    <constraint firstItem="WlG-fy-Epr" firstAttribute="top" secondItem="ZLx-ll-ft8" secondAttribute="bottom" constant="16" id="lP0-Mt-De9"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lct-9z-nEd"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vGy-Xv-lk1" firstAttribute="centerY" secondItem="Z6t-OC-GKZ" secondAttribute="centerY" id="72J-qP-a5q"/>
+                            <constraint firstItem="vGy-Xv-lk1" firstAttribute="leading" secondItem="lct-9z-nEd" secondAttribute="leading" constant="48" id="8pd-JW-LKB"/>
+                            <constraint firstItem="lct-9z-nEd" firstAttribute="bottom" secondItem="XEp-lO-QqO" secondAttribute="bottom" constant="16" id="Cm9-D7-NSj"/>
+                            <constraint firstItem="vGy-Xv-lk1" firstAttribute="centerX" secondItem="Z6t-OC-GKZ" secondAttribute="centerX" id="eeB-yG-iVE"/>
+                            <constraint firstItem="lct-9z-nEd" firstAttribute="trailing" secondItem="XEp-lO-QqO" secondAttribute="trailing" constant="16" id="oho-1X-SuY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="biometricButton" destination="XEp-lO-QqO" id="gJT-Iq-N36"/>
+                        <outlet property="codePasswordTextField" destination="ZLx-ll-ft8" id="CZp-HP-p7l"/>
+                        <outlet property="submitButton" destination="6K4-DS-SJ4" id="oAO-mT-Otw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9yh-fc-rDD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3335" y="3"/>
+        </scene>
     </scenes>
     <resources>
         <image name="touchid" catalog="system" width="128" height="122"/>

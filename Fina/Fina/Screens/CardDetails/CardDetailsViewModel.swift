@@ -16,6 +16,7 @@ final class CardDetailsViewModel {
     let cardRelay: BehaviorRelay<Card>
     let transactionsRelay = BehaviorRelay<[Transaction]>(value: [])
     let bankAccountRelay = BehaviorRelay<BankAccount?>(value: nil)
+    let canCreateCreditRelay: BehaviorRelay<Bool>
     
     private let userManager = ManagerFactory.shared.userManager
     private let bankAccountsManager = ManagerFactory.shared.bankAccountsManager
@@ -25,7 +26,8 @@ final class CardDetailsViewModel {
     private let disposeBag = DisposeBag()
     
     init(_ card: Card) {
-        self.cardRelay = BehaviorRelay<Card>(value: card)
+        cardRelay = BehaviorRelay<Card>(value: card)
+        canCreateCreditRelay = BehaviorRelay<Bool>(value: card.cardType == .credit)
         
         userManager.currentUser.asDriver().drive(onNext: { [weak self] user in
             guard let user = user else { return }
@@ -49,12 +51,21 @@ final class CardDetailsViewModel {
     }
     
     func topUp(_ amount: Double) {
+        guard amount > 0 else { return }
         transactionsEngine.topUp(to: cardRelay.value.bankAccountId, sum: amount, currency: .byn)
     }
     
     func pay(_ amount: Double) {
-        guard let bankAccount = bankAccountRelay.value else { return }
+        guard let bankAccount = bankAccountRelay.value, amount > 0 else { return }
         transactionsEngine.pay(from: cardRelay.value.bankAccountId, sum: amount, currency: bankAccount.currency)
+    }
+    
+    func transfer(_ amount: Double, _ recieverCardNumber: String) {
+        guard let bankAccount = bankAccountRelay.value, amount > 0, recieverCardNumber.clearTabs().isValidCardNumber(), recieverCardNumber != Ciper.unseal(cardRelay.value.number) else { return }
+        bankAccountsManager.fetchBankAccount(by: recieverCardNumber) { [weak self] recieverAccount in
+            guard let recieverAccount = recieverAccount else { return }
+            self?.transactionsEngine.transfer(from: bankAccount.uid, to: recieverAccount.uid, sum: amount, currency: bankAccount.currency)
+        }
     }
     
 }

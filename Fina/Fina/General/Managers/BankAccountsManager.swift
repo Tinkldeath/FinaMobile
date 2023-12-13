@@ -42,6 +42,16 @@ final class BankAccountsManager: BaseManager {
         }
     }
     
+    func fetchBankAccount(by cardNumber: String, _ completion: @escaping BankAccountClosure) {
+        firestore.collection(Card.collection()).getDocuments { [weak self] snapshot, error in
+            guard let docs = snapshot?.documents, error == nil else { completion(nil); return }
+            guard let bankAccountId = docs.compactMap({ Card($0.data()) }).first(where: { Ciper.unseal($0.number) == cardNumber })?.bankAccountId else { completion(nil); return }
+            self?.fetchBankAccount(bankAccountId, { bankAccount in
+                completion(bankAccount)
+            })
+        }
+    }
+    
     func fetchBankAccount(_ uid: String, _ completion: @escaping BankAccountClosure) {
         firestore.collection(BankAccount.collection()).document(uid).getDocument { snapshot, error in
             guard let data = snapshot?.data(), let bankAccount = BankAccount(data), error == nil else { completion(nil); return }

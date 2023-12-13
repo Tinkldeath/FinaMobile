@@ -90,4 +90,17 @@ extension String {
         return String.generateRandomNumbers(26)
     }
     
+    func clearTabs() -> String {
+        var result = self
+        result = result.replacingOccurrences(of: " ", with: "")
+        result = result.replacingOccurrences(of: "\t", with: "")
+        return result
+    }
+    
+    func isValidCardNumber() -> Bool {
+        let passwordRegex = "^[0-9]{16}$"
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", passwordRegex)
+        return passwordTest.evaluate(with: self)
+    }
+    
 }

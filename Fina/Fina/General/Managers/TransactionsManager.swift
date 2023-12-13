@@ -25,7 +25,32 @@ final class TransactionsManager {
     
     private var transactions = Set<Transaction>() {
         didSet {
-            transactionsRelay.accept(transactions.sorted(by: { $0.date < $1.date }))
+            transactionsRelay.accept(transactions.sorted(by: { $0.date > $1.date }))
+        }
+    }
+    
+    func fetchTransactions(for bankAccountId: String, _ month: Int, _ year: Int, _ completion: @escaping TransactionsClosure) {
+        firestore.collection(Transaction.collection()).whereField("senderBankAccount", isEqualTo: bankAccountId).getDocuments { snapshot, error in
+            guard let documents = snapshot?.documents, error == nil else { completion([]); return }
+            let transactions = documents.compactMap({ Transaction($0.data()) })
+            let filtered = transactions.filter({ $0.date.baseComponents().month == month && $0.date.baseComponents().year == year && ($0.transactionType == .payment || $0.transactionType == .transfer) })
+            completion(filtered)
+        }
+    }
+    
+    func fetchTransactions(for bankAccountId: String, _ completion: @escaping TransactionsClosure) {
+        firestore.collection(Transaction.collection()).getDocuments { snapshot, error in
+            guard let documents = snapshot?.documents, error == nil else { completion([]); return }
+            let transactions = documents.compactMap({ Transaction($0.data()) }).filter({ $0.senderBankAccount == bankAccountId || $0.recieverBankAccount == bankAccountId })
+            let nowComponents = Date.now.baseComponents()
+            var results = Set<Transaction>()
+            for i in 1...12 {
+                let filtered = transactions.filter({ $0.date.baseComponents().year == nowComponents.year && $0.date.baseComponents().month == i })
+                for filter in filtered {
+                    results.insert(filter)
+                }
+            }
+            completion(results.map({ $0 }))
         }
     }
             
